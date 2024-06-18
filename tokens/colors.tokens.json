@@ -15,13 +15,15 @@
       "type": "color",
       "description": ""
     },
-    "bg": {
-      "value": "{red-10}",
-      "type": "color"
-    },
-    "text": {
-      "value": "{red-30}",
-      "type": "color"
+    "color": {
+      "bg": {
+        "value": "{red-10}",
+        "type": "color"
+      },
+      "text": {
+        "value": "{red-30}",
+        "type": "color"
+      }
     }
   },
   "$themes": [],
