@@ -1,7 +1,7 @@
 import StyleDictionary from "style-dictionary-utils";
 
 const config = {
-  source: ["tokens/**/*.tokens.json"],
+  source: ["tokens/tokens.json"],
   platforms: {
     css: {
       buildPath: "dist/css/",
