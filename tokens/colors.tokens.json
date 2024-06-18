@@ -15,7 +15,7 @@
       "type": "color",
       "description": ""
     },
-    "color": {
+    "colors": {
       "bg": {
         "value": "{red-10}",
         "type": "color"
