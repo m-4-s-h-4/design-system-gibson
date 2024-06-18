@@ -1,0 +1,31 @@
+{
+  "colors": {
+    "red-10": {
+      "value": "#ff5050",
+      "type": "color",
+      "description": ""
+    },
+    "red-20": {
+      "value": "#ff1414",
+      "type": "color",
+      "description": ""
+    },
+    "red-30": {
+      "value": "#880000",
+      "type": "color",
+      "description": ""
+    },
+    "bg": {
+      "value": "{colors.red-10}",
+      "type": "color"
+    },
+    "text": {
+      "value": "{colors.red-20}",
+      "type": "color"
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": ["Variable collection"]
+  }
+}

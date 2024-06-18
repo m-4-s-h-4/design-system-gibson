@@ -6,13 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:tokens": "style-dictionary build",
+    "build:tokens": "node build.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "style-dictionary-utils": "^2.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
