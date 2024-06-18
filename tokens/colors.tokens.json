@@ -16,16 +16,18 @@
       "description": ""
     },
     "bg": {
-      "value": "{colors.red-10}",
+      "value": "{red-10}",
       "type": "color"
     },
     "text": {
-      "value": "{colors.red-20}",
+      "value": "{red-30}",
       "type": "color"
     }
   },
   "$themes": [],
   "$metadata": {
-    "tokenSetOrder": ["Variable collection"]
+    "tokenSetOrder": [
+      "colors"
+    ]
   }
 }
