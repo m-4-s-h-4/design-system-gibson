@@ -1,0 +1,8 @@
+:root {
+  --red-10: #ff5050;
+  --red-20: #ff1414;
+  --red-30: #880000;
+  --bg-color: var(--red-10);
+  --text-color: var(--red-30);
+  --accent-color: var(--red-20);
+}
