@@ -1,22 +1,38 @@
 const StyleDictionary = require("style-dictionary");
 
+// Custom format to handle nested objects correctly
+const scssCustomFormat = {
+  name: "scss/variables",
+  formatter: ({ dictionary, options }) => {
+    const serializeValue = (value) => {
+      if (typeof value === "object") {
+        return JSON.stringify(value, null, 2);
+      }
+      return value;
+    };
+
+    return `${StyleDictionary.formatHelpers.fileHeader({ fileHeader: true })}
+
+:root {
+${dictionary.allProperties.map((prop) => `  --${prop.name}: ${serializeValue(prop.value)};`).join("\n")}
+}
+`;
+  },
+};
+
 const jsFlatFormat = {
   name: "javascript/flat",
-  formatter: ({ properties }) => {
-    return `module.exports = ${JSON.stringify(properties, null, 2)}`;
+  formatter: ({ dictionary, options }) => {
+    return `module.exports = ${JSON.stringify(dictionary.tokens, null, 2)}`;
   },
 };
 
 StyleDictionary.registerFormat(jsFlatFormat);
+StyleDictionary.registerFormat(scssCustomFormat);
 
 StyleDictionary.registerFileHeader({
   name: "myCustomHeader",
   fileHeader: (defaultMessage) => {
-    // defaultMessage are the 2 lines above that appear in the default file header
-    // you can use this to add a message before or after the default message 👇
-
-    // the fileHeader function should return an array of strings
-    // which will be formatted in the proper comment style for a given format
     return [...defaultMessage, `hello?`, `is it me you're looking for?`];
   },
 });
@@ -30,7 +46,7 @@ module.exports = {
       files: [
         {
           destination: "_variables.css",
-          format: "css/variables",
+          format: "scss/variables",
         },
       ],
     },
@@ -40,7 +56,7 @@ module.exports = {
       files: [
         {
           destination: "_variables.js",
-          format: "javascript/flat", // es6 --> flat
+          format: "javascript/flat",
         },
       ],
     },
