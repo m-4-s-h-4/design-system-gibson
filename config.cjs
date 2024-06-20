@@ -20,14 +20,24 @@ ${dictionary.allProperties.map((prop) => `  --${prop.name}: ${serializeValue(pro
   },
 };
 
-const jsFlatFormat = {
-  name: "javascript/flat",
+const jsExportFormat = {
+  name: "javascript/export",
   formatter: ({ dictionary, options }) => {
-    return `module.exports = ${JSON.stringify(dictionary.tokens, null, 2)}`;
+    const formatName = (name) => {
+      return name
+        .replace(/--/g, "")
+        .replace(/-([a-z])/g, (g) => g[1].toUpperCase())
+        .replace(/^([a-z])/g, (g) => g.toUpperCase());
+    };
+
+    return `${StyleDictionary.formatHelpers.fileHeader({ fileHeader: true })}
+
+${dictionary.allProperties.map((prop) => `export const ${formatName(prop.name)} = ${JSON.stringify(prop.value)};`).join("\n")}
+`;
   },
 };
 
-StyleDictionary.registerFormat(jsFlatFormat);
+StyleDictionary.registerFormat(jsExportFormat);
 StyleDictionary.registerFormat(scssCustomFormat);
 
 StyleDictionary.registerFileHeader({
@@ -42,7 +52,7 @@ module.exports = {
   platforms: {
     scss: {
       transformGroup: "css",
-      buildPath: "build/css/",
+      buildPath: "tokens/css/",
       files: [
         {
           destination: "_variables.css",
@@ -52,11 +62,11 @@ module.exports = {
     },
     javascript: {
       transformGroup: "js",
-      buildPath: "build/js/",
+      buildPath: "tokens/js/",
       files: [
         {
-          destination: "_variables.js",
-          format: "javascript/flat",
+          destination: "variables.js",
+          format: "javascript/export",
         },
       ],
     },
