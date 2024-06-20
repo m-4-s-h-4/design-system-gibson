@@ -6,14 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:tokens": "node build.cjs",
+    "build:tokens": "style-dictionary build --config config.cjs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "style-dictionary-utils": "^2.4.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -27,6 +26,7 @@
     "prettier": "^3.3.2",
     "prettier-eslint": "^16.3.0",
     "style-dictionary": "^3.9.2",
+    "style-dictionary-utils": "^2.4.1",
     "typescript": "^4.9.5",
     "vite": "^5.2.0"
   }
