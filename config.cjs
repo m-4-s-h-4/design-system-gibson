@@ -1,6 +1,5 @@
 const StyleDictionary = require("style-dictionary");
 
-// Custom format to handle nested objects correctly
 const scssCustomFormat = {
   name: "scss/variables",
   formatter: ({ dictionary, options }) => {
@@ -52,7 +51,7 @@ module.exports = {
   platforms: {
     scss: {
       transformGroup: "css",
-      buildPath: "tokens/css/",
+      buildPath: "src/tokens/css/",
       files: [
         {
           destination: "_variables.css",
@@ -62,7 +61,7 @@ module.exports = {
     },
     javascript: {
       transformGroup: "js",
-      buildPath: "tokens/js/",
+      buildPath: "src/tokens/js/",
       files: [
         {
           destination: "variables.js",
