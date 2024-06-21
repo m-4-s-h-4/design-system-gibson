@@ -2,11 +2,10 @@ const StyleDictionary = require("style-dictionary");
 
 const scssCustomFormat = {
   name: "scss/variables",
-  formatter: ({ dictionary }) => {
-    const serializeValue = (value, name) => {
-      // Check if the value is a color token and needs to be referenced as a CSS variable
-      if (name.includes("color") && value.startsWith("brown")) {
-        return `var(--tokens-tokens-color-${value})`;
+  formatter: ({ dictionary, options }) => {
+    const serializeValue = (value) => {
+      if (typeof value === "object") {
+        return JSON.stringify(value, null, 2);
       }
       return value;
     };
@@ -14,7 +13,7 @@ const scssCustomFormat = {
     return `${StyleDictionary.formatHelpers.fileHeader({ fileHeader: true })}
 
 :root {
-${dictionary.allProperties.map((prop) => `  --${prop.name}: ${serializeValue(prop.value, prop.name)};`).join("\n")}
+${dictionary.allProperties.map((prop) => `  --${prop.name}: ${serializeValue(prop.value)};`).join("\n")}
 }
 `;
   },
@@ -22,7 +21,7 @@ ${dictionary.allProperties.map((prop) => `  --${prop.name}: ${serializeValue(pro
 
 const jsExportFormat = {
   name: "javascript/export",
-  formatter: ({ dictionary }) => {
+  formatter: ({ dictionary, options }) => {
     const formatName = (name) => {
       return name
         .replace(/--/g, "")
