@@ -13,7 +13,14 @@ const scssCustomFormat = {
     return `${StyleDictionary.formatHelpers.fileHeader({ fileHeader: true })}
 
 :root {
-${dictionary.allProperties.map((prop) => `  --${prop.name}: ${serializeValue(prop.value)};`).join("\n")}
+${dictionary.allProperties
+  .map((prop) => {
+    const value = prop.original.value.startsWith("{")
+      ? `var(--${prop.original.value.replace(/[{}]/g, "").replace(/\./g, "-")})`
+      : serializeValue(prop.value);
+    return `  --${prop.name}: ${value};`;
+  })
+  .join("\n")}
 }
 `;
   },
