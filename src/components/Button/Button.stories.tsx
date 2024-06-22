@@ -8,28 +8,58 @@ export default {
     variant: {
       control: {
         type: "select",
-        options: ["primary", "secondary"],
+        options: ["primary", "secondary", "iconOnly"],
       },
     },
     children: {
-      control: "text",
+      control: {
+        type: "text",
+        disable: true,
+      },
     },
     onClick: {
       action: "clicked",
     },
+    disabled: {
+      control: {
+        type: "boolean",
+      },
+    },
+    icon: {
+      control: {
+        type: "boolean",
+      },
+    },
   },
 } as Meta;
 
-const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+const Template: StoryFn<ButtonProps & { icon: boolean }> = (args) => {
+  const { icon, variant, ...rest } = args;
+  return <Button {...rest} icon={icon} variant={variant} />;
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
   variant: "primary",
-  children: "button",
+  children: "Button",
+  icon: false,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: "secondary",
-  children: "button",
+  children: "Button",
+  icon: false,
+};
+
+export const IconOnly = Template.bind({});
+IconOnly.args = {
+  variant: "iconOnly",
+  icon: true,
+  children: undefined,
+};
+
+IconOnly.argTypes = {
+  children: { control: false },
+  icon: { control: false },
 };
