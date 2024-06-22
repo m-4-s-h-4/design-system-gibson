@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgSearch = (props: SVGProps<SVGSVGElement>) => (
+interface SvgSearchProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Search = ({ size = "1em", ...props }: SvgSearchProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgSearch = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgSearch;
+export default Search;

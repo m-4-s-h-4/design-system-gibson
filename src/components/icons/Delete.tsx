@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgDelete = (props: SVGProps<SVGSVGElement>) => (
+interface SvgDeleteProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Delete = ({ size = "1em", ...props }: SvgDeleteProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgDelete = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgDelete;
+export default Delete;

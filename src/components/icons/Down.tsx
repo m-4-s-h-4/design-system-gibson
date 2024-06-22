@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgDown = (props: SVGProps<SVGSVGElement>) => (
+interface SvgDownProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Down = ({ size = "1em", ...props }: SvgDownProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgDown = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgDown;
+export default Down;

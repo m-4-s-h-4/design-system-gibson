@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgCall = (props: SVGProps<SVGSVGElement>) => (
+interface SvgCallProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Call = ({ size = "1em", ...props }: SvgCallProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgCall = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgCall;
+export default Call;

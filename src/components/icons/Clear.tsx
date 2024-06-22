@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgClear = (props: SVGProps<SVGSVGElement>) => (
+interface SvgClearProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Clear = ({ size = "1em", ...props }: SvgClearProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgClear = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgClear;
+export default Clear;

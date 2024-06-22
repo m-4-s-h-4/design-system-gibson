@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgFavourite = (props: SVGProps<SVGSVGElement>) => (
+interface SvgFavouriteProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Favourite = ({ size = "1em", ...props }: SvgFavouriteProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgFavourite = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgFavourite;
+export default Favourite;

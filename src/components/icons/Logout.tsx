@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgLogout = (props: SVGProps<SVGSVGElement>) => (
+interface SvgLogoutProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Logout = ({ size = "1em", ...props }: SvgLogoutProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgLogout = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgLogout;
+export default Logout;

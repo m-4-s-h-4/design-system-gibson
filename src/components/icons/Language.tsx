@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgLanguage = (props: SVGProps<SVGSVGElement>) => (
+interface SvgLanguageProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Language = ({ size = "1em", ...props }: SvgLanguageProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgLanguage = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgLanguage;
+export default Language;

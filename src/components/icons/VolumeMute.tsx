@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgVolumeMute = (props: SVGProps<SVGSVGElement>) => (
+interface SvgVolumeMuteProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const VolumeMute = ({ size = "1em", ...props }: SvgVolumeMuteProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgVolumeMute = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgVolumeMute;
+export default VolumeMute;

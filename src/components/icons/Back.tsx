@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgBack = (props: SVGProps<SVGSVGElement>) => (
+interface SvgBackProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Back = ({ size = "1em", ...props }: SvgBackProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgBack = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgBack;
+export default Back;

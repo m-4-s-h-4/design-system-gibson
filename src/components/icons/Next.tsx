@@ -4,7 +4,7 @@ interface SvgNextProps extends SVGProps<SVGSVGElement> {
   size?: string;
 }
 
-const SvgNext = ({ size = "1em", ...props }: SvgNextProps) => (
+const Next = ({ size = "1em", ...props }: SvgNextProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -27,4 +27,4 @@ const SvgNext = ({ size = "1em", ...props }: SvgNextProps) => (
   </svg>
 );
 
-export default SvgNext;
+export default Next;

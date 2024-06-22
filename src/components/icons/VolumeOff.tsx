@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgVolumeOff = (props: SVGProps<SVGSVGElement>) => (
+interface SvgVolumeOffProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const VolumeOff = ({ size = "1em", ...props }: SvgVolumeOffProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgVolumeOff = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgVolumeOff;
+export default VolumeOff;

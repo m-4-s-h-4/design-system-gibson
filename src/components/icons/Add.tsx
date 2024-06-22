@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgAdd = (props: SVGProps<SVGSVGElement>) => (
+interface SvgAddProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Add = ({ size = "1em", ...props }: SvgAddProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -18,4 +22,4 @@ const SvgAdd = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgAdd;
+export default Add;

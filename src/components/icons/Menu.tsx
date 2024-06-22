@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgMenu = (props: SVGProps<SVGSVGElement>) => (
+interface SvgMenuProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Menu = ({ size = "1em", ...props }: SvgMenuProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgMenu = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgMenu;
+export default Menu;

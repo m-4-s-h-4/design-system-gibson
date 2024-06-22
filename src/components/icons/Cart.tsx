@@ -1,5 +1,10 @@
 import type { SVGProps } from "react";
-const SvgCart = (props: SVGProps<SVGSVGElement>) => (
+
+interface SvgCartProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Cart = ({ size = "1em", ...props }: SvgCartProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +26,4 @@ const SvgCart = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgCart;
+export default Cart;

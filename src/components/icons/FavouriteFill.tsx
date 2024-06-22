@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgFavouriteFill = (props: SVGProps<SVGSVGElement>) => (
+interface SvgFavouriteFillProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const FavouriteFill = ({ size = "1em", ...props }: SvgFavouriteFillProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgFavouriteFill = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgFavouriteFill;
+export default FavouriteFill;

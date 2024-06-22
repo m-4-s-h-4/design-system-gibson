@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgPayment = (props: SVGProps<SVGSVGElement>) => (
+interface SvgPaymentProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Payment = ({ size = "1em", ...props }: SvgPaymentProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgPayment = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgPayment;
+export default Payment;

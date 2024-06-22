@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgDone = (props: SVGProps<SVGSVGElement>) => (
+interface SvgDoneProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Done = ({ size = "1em", ...props }: SvgDoneProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgDone = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgDone;
+export default Done;

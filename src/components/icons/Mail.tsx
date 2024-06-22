@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgMail = (props: SVGProps<SVGSVGElement>) => (
+interface SvgMailProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const Mail = ({ size = "1em", ...props }: SvgMailProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -21,4 +25,4 @@ const SvgMail = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgMail;
+export default Mail;

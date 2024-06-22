@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
-const SvgUser = (props: SVGProps<SVGSVGElement>) => (
+interface SvgUserProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const User = ({ size = "1em", ...props }: SvgUserProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -19,4 +23,4 @@ const SvgUser = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-export default SvgUser;
+export default User;
