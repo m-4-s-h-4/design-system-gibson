@@ -14,7 +14,6 @@ export default {
     children: {
       control: {
         type: "text",
-        disable: true,
       },
     },
     onClick: {
@@ -45,11 +44,21 @@ Primary.args = {
   icon: false,
 };
 
+Primary.argTypes = {
+  children: { control: { type: "text" } },
+  icon: { control: { type: "boolean" } },
+};
+
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: "secondary",
   children: "Button",
   icon: false,
+};
+
+Secondary.argTypes = {
+  children: { control: { type: "text" } },
+  icon: { control: { type: "boolean" } },
 };
 
 export const IconOnly = Template.bind({});
