@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Jun 2024 09:45:59 GMT
+ * Generated on Sat, 22 Jun 2024 10:15:33 GMT
  */
 
 
@@ -83,10 +83,13 @@ export const FontSize1 = "14px";
 export const FontSize2 = "16px";
 export const FontSize3 = "18px";
 export const FontSize4 = "20px";
-export const FontSize5 = "24";
-export const FontSize6 = "32";
-export const FontSize7 = "40";
-export const FontSize8 = "48";
+export const FontSize5 = "24px";
+export const FontSize6 = "32px";
+export const FontSize7 = "40px";
+export const FontSize8 = "48px";
+export const FontSizeSmallIcon = "16px";
+export const FontSizeMediumIcon = "24px";
+export const FontSizeLargeIcon = "36px";
 export const LetterSpacing0 = "0%";
 export const ParagraphSpacing0 = "0";
 export const ParagraphIndent0 = "0px";
