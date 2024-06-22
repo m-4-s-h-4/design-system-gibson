@@ -41,6 +41,7 @@ import {
   H5HeadingMainTextDecoration,
   H5HeadingMainTextCase,
 } from "../../tokens/js/variables";
+
 export interface HeadingProps {
   as: "h1" | "h2" | "h3" | "h4" | "h5";
   variant: "heading10" | "heading20" | "heading30" | "heading40" | "heading50";
