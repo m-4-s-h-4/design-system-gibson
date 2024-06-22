@@ -24,19 +24,20 @@ import {
   FontSizeMediumIcon,
   TokensColorIconPrimaryColor,
   SpacingSpacing2,
+  ButtonLinkTextDecoration,
+  TokensColorButtonLinkButtonDefault,
 } from "../../tokens/js/variables";
 import Next from "../icons/Next";
 import iconComponents from "../icons/iconMapping";
 
 export interface ButtonProps {
-  variant?: "primary" | "secondary" | "iconOnly";
+  variant?: "primary" | "secondary" | "iconOnly" | "link";
   children?: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   icon?: boolean;
   iconType?: keyof typeof iconComponents;
 }
-
 const variantStyles = {
   primary: {
     backgroundColor: TokensColorButtonPrimaryDefault,
@@ -82,7 +83,7 @@ const variantStyles = {
   },
   iconOnly: {
     backgroundColor: "transparent",
-    color: TokensColorGrayscaleBlack900,
+    color: TokensColorIconPrimaryColor,
     padding: "0",
     fontFamily: "inherit",
     fontWeight: "inherit",
@@ -94,11 +95,26 @@ const variantStyles = {
     textCase: "none",
     textDecoration: "none",
   },
+  link: {
+    backgroundColor: "transparent",
+    color: TokensColorButtonLinkButtonDefault,
+    padding: "0",
+    fontFamily: ButtonFontFamily,
+    fontWeight: ButtonFontWeight,
+    lineHeight: ButtonLineHeight,
+    fontSize: ButtonFontSize,
+    letterSpacing: ButtonLetterSpacing,
+    paragraphSpacing: ParagraphSpacing0,
+    paragraphIndent: ParagraphIndent0,
+    textCase: ButtonTextCase,
+    textDecoration: ButtonLinkTextDecoration,
+    textDecorationThickness: "2px",
+  },
 };
 
 const StyledButton = styled.button<ButtonProps>`
   background-color: ${(props) =>
-    props.variant === "iconOnly"
+    props.variant === "iconOnly" || props.variant === "link"
       ? "transparent"
       : props.disabled
         ? variantStyles.disabled.backgroundColor
@@ -108,13 +124,17 @@ const StyledButton = styled.button<ButtonProps>`
   color: ${(props) =>
     props.variant === "iconOnly"
       ? TokensColorGrayscaleBlack900
-      : props.disabled
-        ? variantStyles.disabled.color
-        : props.variant
-          ? variantStyles[props.variant].color
-          : variantStyles.primary.color};
+      : props.variant === "link"
+        ? props.disabled
+          ? TokensColorButtonDisabledDefault
+          : TokensColorButtonLinkButtonDefault
+        : props.disabled
+          ? variantStyles.disabled.color
+          : props.variant
+            ? variantStyles[props.variant].color
+            : variantStyles.primary.color};
   padding: ${(props) =>
-    props.variant === "iconOnly"
+    props.variant === "iconOnly" || props.variant === "link"
       ? "0"
       : props.disabled
         ? variantStyles.disabled.padding
@@ -172,11 +192,17 @@ const StyledButton = styled.button<ButtonProps>`
   text-decoration: ${(props) =>
     props.variant === "iconOnly"
       ? "none"
-      : props.disabled
-        ? variantStyles.disabled.textDecoration
-        : props.variant
-          ? variantStyles[props.variant].textDecoration
-          : variantStyles.primary.textDecoration};
+      : props.variant === "link"
+        ? `${variantStyles.link.textDecoration}`
+        : props.disabled
+          ? variantStyles.disabled.textDecoration
+          : props.variant
+            ? variantStyles[props.variant].textDecoration
+            : variantStyles.primary.textDecoration};
+  text-decoration-thickness: ${(props) =>
+    props.variant === "link"
+      ? variantStyles.link.textDecorationThickness
+      : "initial"};
   border: none;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   display: flex;
@@ -186,13 +212,27 @@ const StyledButton = styled.button<ButtonProps>`
 
   &:hover {
     background-color: ${(props) =>
-      props.variant === "iconOnly"
-        ? "transparent"
-        : props.disabled
-          ? variantStyles.disabled.backgroundColor
+      props.disabled
+        ? props.variant === "link"
+          ? "transparent"
+          : variantStyles.disabled.backgroundColor
+        : props.variant === "iconOnly" || props.variant === "link"
+          ? "transparent"
           : props.variant === "secondary"
             ? TokensColorButtonSecondaryHover
             : TokensColorButtonPrimaryHover};
+    color: ${(props) =>
+      props.disabled
+        ? props.variant === "link"
+          ? TokensColorButtonDisabledDefault
+          : variantStyles.disabled.color
+        : props.variant === "link"
+          ? TokensColorButtonSecondaryHover
+          : props.variant === "primary"
+            ? TokensColorButtonPrimaryText
+            : props.variant === "secondary"
+              ? TokensColorButtonSecondaryText
+              : "inherit"};
   }
 `;
 

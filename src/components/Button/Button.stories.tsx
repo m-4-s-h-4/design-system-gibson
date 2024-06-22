@@ -9,7 +9,7 @@ export default {
     variant: {
       control: {
         type: "select",
-        options: ["primary", "secondary", "iconOnly"],
+        options: ["primary", "secondary", "iconOnly", "link"],
       },
     },
     children: {
@@ -79,6 +79,27 @@ IconOnly.args = {
 };
 
 IconOnly.argTypes = {
+  variant: { control: false },
   children: { control: false },
   icon: { control: false },
+  iconType: {
+    control: {
+      type: "select",
+      options: ["Next", ...Object.keys(iconComponents)],
+    },
+  },
+};
+
+export const Link = Template.bind({});
+Link.args = {
+  variant: "link",
+  children: "Button",
+  icon: false,
+  iconType: "Next",
+};
+
+Link.argTypes = {
+  variant: { control: false },
+  icon: { control: false },
+  iconType: { control: false },
 };
