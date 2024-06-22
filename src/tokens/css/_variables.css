@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 21 Jun 2024 20:07:49 GMT
+ * Generated on Sat, 22 Jun 2024 09:04:10 GMT
  */
 
 
@@ -47,6 +47,8 @@
   --tokens-color-button-secondary-default: var(--tokens-color-grayscale-black-900);
   --tokens-color-button-secondary-hover: var(--tokens-color-grayscale-black-700);
   --tokens-color-button-secondary-text: var(--tokens-color-grayscale-white);
+  --tokens-color-button-disabled-default: var(--tokens-color-grayscale-black-400);
+  --tokens-color-button-disabled-text: var(--tokens-color-grayscale-white);
   --spacing-spacing-1: 0.25rem;
   --spacing-spacing-2: 0.5rem;
   --spacing-spacing-3: 0.75rem;
