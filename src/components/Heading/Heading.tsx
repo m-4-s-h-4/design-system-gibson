@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import {
   H1HeadingMainFontFamily,
@@ -101,7 +102,9 @@ const variantStyles = {
   },
 };
 
-const StyledHeading = styled.h1<HeadingProps>`
+const StyledHeading = styled.h1<{
+  variant: "heading10" | "heading20" | "heading30" | "heading40" | "heading50";
+}>`
   font-family: ${(props) => variantStyles[props.variant].fontFamily};
   font-weight: ${(props) => variantStyles[props.variant].fontWeight};
   line-height: ${(props) => variantStyles[props.variant].lineHeight};
@@ -113,8 +116,9 @@ const StyledHeading = styled.h1<HeadingProps>`
 `;
 
 const Heading: React.FC<HeadingProps> = ({ as, variant, children }) => {
+  const CustomTag = as;
   return (
-    <StyledHeading as={as} variant={variant}>
+    <StyledHeading as={CustomTag} variant={variant}>
       {children}
     </StyledHeading>
   );
