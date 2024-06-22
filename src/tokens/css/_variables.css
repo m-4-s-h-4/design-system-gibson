@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Jun 2024 10:39:25 GMT
+ * Generated on Sat, 22 Jun 2024 14:16:47 GMT
  */
 
 
@@ -49,6 +49,9 @@
   --tokens-color-button-secondary-text: var(--tokens-color-grayscale-white);
   --tokens-color-button-disabled-default: var(--tokens-color-grayscale-black-400);
   --tokens-color-button-disabled-text: var(--tokens-color-grayscale-white);
+  --tokens-color-button-link-button-default: var(--tokens-color-grayscale-black-900);
+  --tokens-color-button-destructive-default: var(--tokens-color-secondary-red-red);
+  --tokens-color-button-destructive-hover: var(--tokens-color-secondary-red-red-dark);
   --tokens-color-icon-primary-color: var(--tokens-color-grayscale-black-900);
   --spacing-spacing-1: 0.25rem;
   --spacing-spacing-2: 0.5rem;
@@ -208,6 +211,7 @@
   --button-paragraph-indent: 0px;
   --button-text-case: uppercase;
   --button-text-decoration: none;
+  --button-link-text-decoration: underline;
   --button-small-font-family: Impact;
   --button-small-font-weight: 500;
   --button-small-line-height: 14px;

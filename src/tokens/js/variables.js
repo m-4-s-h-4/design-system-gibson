@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Jun 2024 10:39:25 GMT
+ * Generated on Sat, 22 Jun 2024 14:16:47 GMT
  */
 
 
@@ -48,6 +48,9 @@ export const TokensColorButtonSecondaryHover = "#666666";
 export const TokensColorButtonSecondaryText = "#ffffff";
 export const TokensColorButtonDisabledDefault = "#d3d3d3";
 export const TokensColorButtonDisabledText = "#ffffff";
+export const TokensColorButtonLinkButtonDefault = "#1a1a1a";
+export const TokensColorButtonDestructiveDefault = "#ec2020";
+export const TokensColorButtonDestructiveHover = "#832219";
 export const TokensColorIconPrimaryColor = "#1a1a1a";
 export const SpacingSpacing1 = "0.25rem";
 export const SpacingSpacing2 = "0.5rem";
@@ -207,6 +210,7 @@ export const ButtonParagraphSpacing = "0";
 export const ButtonParagraphIndent = "0px";
 export const ButtonTextCase = "uppercase";
 export const ButtonTextDecoration = "none";
+export const ButtonLinkTextDecoration = "underline";
 export const ButtonSmallFontFamily = "Impact";
 export const ButtonSmallFontWeight = "500";
 export const ButtonSmallLineHeight = "14px";

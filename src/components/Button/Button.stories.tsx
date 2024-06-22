@@ -9,7 +9,7 @@ export default {
     variant: {
       control: {
         type: "select",
-        options: ["primary", "secondary", "iconOnly", "link"],
+        options: ["primary", "secondary", "iconOnly", "link", "destructive"],
       },
     },
     children: {
@@ -66,6 +66,19 @@ Secondary.args = {
 };
 
 Secondary.argTypes = {
+  children: { control: { type: "text" } },
+  icon: { control: { type: "boolean" } },
+};
+
+export const Destructive = Template.bind({});
+Destructive.args = {
+  variant: "destructive",
+  children: "Button",
+  icon: false,
+  iconType: "Delete",
+};
+
+Destructive.argTypes = {
   children: { control: { type: "text" } },
   icon: { control: { type: "boolean" } },
 };

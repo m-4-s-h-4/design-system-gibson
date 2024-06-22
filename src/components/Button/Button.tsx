@@ -26,12 +26,14 @@ import {
   SpacingSpacing2,
   ButtonLinkTextDecoration,
   TokensColorButtonLinkButtonDefault,
+  TokensColorButtonDestructiveDefault,
+  TokensColorButtonDestructiveHover,
 } from "../../tokens/js/variables";
 import Next from "../icons/Next";
 import iconComponents from "../icons/iconMapping";
 
 export interface ButtonProps {
-  variant?: "primary" | "secondary" | "iconOnly" | "link";
+  variant?: "primary" | "secondary" | "iconOnly" | "link" | "destructive";
   children?: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
@@ -56,6 +58,20 @@ const variantStyles = {
   secondary: {
     backgroundColor: TokensColorButtonSecondaryDefault,
     color: TokensColorButtonSecondaryText,
+    padding: `${SpacingSpacing3} ${SpacingSpacing10}`,
+    fontFamily: ButtonFontFamily,
+    fontWeight: ButtonFontWeight,
+    lineHeight: ButtonLineHeight,
+    fontSize: ButtonFontSize,
+    letterSpacing: ButtonLetterSpacing,
+    paragraphSpacing: ParagraphSpacing0,
+    paragraphIndent: ParagraphIndent0,
+    textCase: ButtonTextCase,
+    textDecoration: ButtonTextDecoration,
+  },
+  destructive: {
+    backgroundColor: TokensColorButtonDestructiveDefault,
+    color: TokensColorButtonPrimaryText,
     padding: `${SpacingSpacing3} ${SpacingSpacing10}`,
     fontFamily: ButtonFontFamily,
     fontWeight: ButtonFontWeight,
@@ -213,26 +229,38 @@ const StyledButton = styled.button<ButtonProps>`
   &:hover {
     background-color: ${(props) =>
       props.disabled
-        ? props.variant === "link"
+        ? props.variant === "iconOnly"
           ? "transparent"
-          : variantStyles.disabled.backgroundColor
-        : props.variant === "iconOnly" || props.variant === "link"
+          : props.variant === "link"
+            ? "transparent"
+            : variantStyles.disabled.backgroundColor
+        : props.variant === "iconOnly"
           ? "transparent"
-          : props.variant === "secondary"
-            ? TokensColorButtonSecondaryHover
-            : TokensColorButtonPrimaryHover};
+          : props.variant === "link"
+            ? "transparent"
+            : props.variant === "secondary"
+              ? TokensColorButtonSecondaryHover
+              : props.variant === "destructive"
+                ? TokensColorButtonDestructiveHover
+                : TokensColorButtonPrimaryHover};
     color: ${(props) =>
       props.disabled
-        ? props.variant === "link"
-          ? TokensColorButtonDisabledDefault
-          : variantStyles.disabled.color
-        : props.variant === "link"
-          ? TokensColorButtonSecondaryHover
-          : props.variant === "primary"
-            ? TokensColorButtonPrimaryText
-            : props.variant === "secondary"
-              ? TokensColorButtonSecondaryText
-              : "inherit"};
+        ? props.variant === "iconOnly"
+          ? TokensColorIconPrimaryColor
+          : props.variant === "link"
+            ? TokensColorButtonDisabledDefault
+            : variantStyles.disabled.color
+        : props.variant === "iconOnly"
+          ? TokensColorGrayscaleBlack900
+          : props.variant === "link"
+            ? TokensColorButtonSecondaryHover
+            : props.variant === "destructive"
+              ? TokensColorButtonPrimaryText
+              : props.variant === "primary"
+                ? TokensColorButtonPrimaryText
+                : props.variant === "secondary"
+                  ? TokensColorButtonSecondaryText
+                  : "inherit"};
   }
 `;
 
