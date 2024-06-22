@@ -21,7 +21,10 @@ import {
   ParagraphIndent0,
   ButtonTextCase,
   ButtonTextDecoration,
+  FontSizeMediumIcon,
+  TokensColorIconPrimaryColor,
 } from "../../tokens/js/variables";
+import SvgNext from "../icons/Next";
 
 export interface ButtonProps {
   variant?: "primary" | "secondary" | "iconOnly";
@@ -188,19 +191,6 @@ const StyledButton = styled.button<ButtonProps>`
             ? TokensColorButtonSecondaryHover
             : TokensColorButtonPrimaryHover};
   }
-
-  svg {
-    width: ${(props) => (props.variant === "iconOnly" ? "24px" : "8px")};
-    height: ${(props) => (props.variant === "iconOnly" ? "24px" : "12px")};
-    fill: ${(props) =>
-      props.variant === "iconOnly"
-        ? props.disabled
-          ? TokensColorButtonDisabledDefault
-          : TokensColorGrayscaleBlack900
-        : props.variant
-          ? variantStyles[props.variant].color
-          : variantStyles.primary.color};
-  }
 `;
 
 const Button: React.FC<ButtonProps> = ({
@@ -210,6 +200,16 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   icon = false,
 }) => {
+  let iconColor;
+
+  if (variant === "iconOnly") {
+    iconColor = disabled
+      ? TokensColorButtonDisabledDefault
+      : TokensColorIconPrimaryColor;
+  } else {
+    iconColor = TokensColorButtonPrimaryText;
+  }
+
   return (
     <StyledButton
       variant={variant}
@@ -218,17 +218,7 @@ const Button: React.FC<ButtonProps> = ({
       icon={icon}
     >
       {children}
-      {icon && (
-        <svg
-          width="8"
-          height="12"
-          viewBox="0 0 8 12"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M1.99997 0L0.589966 1.41L5.16997 6L0.589966 10.59L1.99997 12L7.99997 6L1.99997 0Z" />
-        </svg>
-      )}
+      {icon && <SvgNext size={FontSizeMediumIcon} color={iconColor} />}
     </StyledButton>
   );
 };
