@@ -42,6 +42,7 @@ export const TokensColorButtonSecondaryHover: string;
 export const TokensColorButtonSecondaryText: string;
 export const TokensColorButtonDisabledDefault: string;
 export const TokensColorButtonDisabledText: string;
+export const TokensColorIconPrimaryColor: string;
 export const SpacingSpacing1: string;
 export const SpacingSpacing2: string;
 export const SpacingSpacing3: string;

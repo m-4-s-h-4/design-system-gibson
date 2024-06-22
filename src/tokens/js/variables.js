@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Jun 2024 10:15:33 GMT
+ * Generated on Sat, 22 Jun 2024 10:39:25 GMT
  */
 
 
@@ -48,6 +48,7 @@ export const TokensColorButtonSecondaryHover = "#666666";
 export const TokensColorButtonSecondaryText = "#ffffff";
 export const TokensColorButtonDisabledDefault = "#d3d3d3";
 export const TokensColorButtonDisabledText = "#ffffff";
+export const TokensColorIconPrimaryColor = "#1a1a1a";
 export const SpacingSpacing1 = "0.25rem";
 export const SpacingSpacing2 = "0.5rem";
 export const SpacingSpacing3 = "0.75rem";

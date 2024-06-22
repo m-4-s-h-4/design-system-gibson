@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Jun 2024 10:15:33 GMT
+ * Generated on Sat, 22 Jun 2024 10:39:25 GMT
  */
 
 
@@ -49,6 +49,7 @@
   --tokens-color-button-secondary-text: var(--tokens-color-grayscale-white);
   --tokens-color-button-disabled-default: var(--tokens-color-grayscale-black-400);
   --tokens-color-button-disabled-text: var(--tokens-color-grayscale-white);
+  --tokens-color-icon-primary-color: var(--tokens-color-grayscale-black-900);
   --spacing-spacing-1: 0.25rem;
   --spacing-spacing-2: 0.5rem;
   --spacing-spacing-3: 0.75rem;
