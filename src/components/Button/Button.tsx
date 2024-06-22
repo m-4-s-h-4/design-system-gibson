@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   TokensColorButtonPrimaryDefault,
   TokensColorButtonPrimaryHover,
@@ -33,13 +33,20 @@ import Next from "../icons/Next";
 import iconComponents from "../icons/iconMapping";
 
 export interface ButtonProps {
-  variant?: "primary" | "secondary" | "iconOnly" | "link" | "destructive";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "iconOnly"
+    | "link"
+    | "destructivePrimary"
+    | "destructiveSecondary";
   children?: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   icon?: boolean;
   iconType?: keyof typeof iconComponents;
 }
+
 const variantStyles = {
   primary: {
     backgroundColor: TokensColorButtonPrimaryDefault,
@@ -69,9 +76,26 @@ const variantStyles = {
     textCase: ButtonTextCase,
     textDecoration: ButtonTextDecoration,
   },
-  destructive: {
+  destructivePrimary: {
     backgroundColor: TokensColorButtonDestructiveDefault,
     color: TokensColorButtonPrimaryText,
+    padding: `${SpacingSpacing3} ${SpacingSpacing10}`,
+    fontFamily: ButtonFontFamily,
+    fontWeight: ButtonFontWeight,
+    lineHeight: ButtonLineHeight,
+    fontSize: ButtonFontSize,
+    letterSpacing: ButtonLetterSpacing,
+    paragraphSpacing: ParagraphSpacing0,
+    paragraphIndent: ParagraphIndent0,
+    textCase: ButtonTextCase,
+    textDecoration: ButtonTextDecoration,
+  },
+  destructiveSecondary: {
+    backgroundColor: "transparent",
+    color: TokensColorButtonDestructiveDefault,
+    borderColor: TokensColorButtonDestructiveDefault,
+    borderWidth: "2px",
+    borderStyle: "solid",
     padding: `${SpacingSpacing3} ${SpacingSpacing10}`,
     fontFamily: ButtonFontFamily,
     fontWeight: ButtonFontWeight,
@@ -132,11 +156,15 @@ const StyledButton = styled.button<ButtonProps>`
   background-color: ${(props) =>
     props.variant === "iconOnly" || props.variant === "link"
       ? "transparent"
-      : props.disabled
-        ? variantStyles.disabled.backgroundColor
-        : props.variant
-          ? variantStyles[props.variant].backgroundColor
-          : variantStyles.primary.backgroundColor};
+      : props.disabled && props.variant === "destructiveSecondary"
+        ? "transparent"
+        : props.disabled
+          ? variantStyles.disabled.backgroundColor
+          : props.variant === "destructiveSecondary"
+            ? "transparent"
+            : props.variant
+              ? variantStyles[props.variant].backgroundColor
+              : variantStyles.primary.backgroundColor};
   color: ${(props) =>
     props.variant === "iconOnly"
       ? TokensColorGrayscaleBlack900
@@ -144,11 +172,21 @@ const StyledButton = styled.button<ButtonProps>`
         ? props.disabled
           ? TokensColorButtonDisabledDefault
           : TokensColorButtonLinkButtonDefault
-        : props.disabled
-          ? variantStyles.disabled.color
-          : props.variant
-            ? variantStyles[props.variant].color
-            : variantStyles.primary.color};
+        : props.disabled && props.variant === "destructiveSecondary"
+          ? TokensColorButtonDisabledDefault
+          : props.disabled
+            ? variantStyles.disabled.color
+            : props.variant
+              ? variantStyles[props.variant].color
+              : variantStyles.primary.color};
+  border: ${(props) =>
+    props.variant === "destructiveSecondary"
+      ? `2px solid ${
+          props.disabled
+            ? TokensColorButtonDisabledDefault
+            : TokensColorButtonDestructiveDefault
+        }`
+      : "none"};
   padding: ${(props) =>
     props.variant === "iconOnly" || props.variant === "link"
       ? "0"
@@ -219,7 +257,6 @@ const StyledButton = styled.button<ButtonProps>`
     props.variant === "link"
       ? variantStyles.link.textDecorationThickness
       : "initial"};
-  border: none;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   display: flex;
   align-items: center;
@@ -227,40 +264,44 @@ const StyledButton = styled.button<ButtonProps>`
   gap: ${(props) => (props.children && props.icon ? SpacingSpacing2 : "0")};
 
   &:hover {
-    background-color: ${(props) =>
-      props.disabled
-        ? props.variant === "iconOnly"
+    ${(props) =>
+      !props.disabled &&
+      css`
+        background-color: ${props.variant === "iconOnly"
           ? "transparent"
           : props.variant === "link"
             ? "transparent"
-            : variantStyles.disabled.backgroundColor
-        : props.variant === "iconOnly"
-          ? "transparent"
-          : props.variant === "link"
-            ? "transparent"
-            : props.variant === "secondary"
-              ? TokensColorButtonSecondaryHover
-              : props.variant === "destructive"
-                ? TokensColorButtonDestructiveHover
-                : TokensColorButtonPrimaryHover};
-    color: ${(props) =>
-      props.disabled
-        ? props.variant === "iconOnly"
-          ? TokensColorIconPrimaryColor
-          : props.variant === "link"
-            ? TokensColorButtonDisabledDefault
-            : variantStyles.disabled.color
-        : props.variant === "iconOnly"
+            : props.variant === "destructiveSecondary"
+              ? "transparent"
+              : props.variant === "secondary"
+                ? TokensColorButtonSecondaryHover
+                : props.variant === "destructivePrimary"
+                  ? TokensColorButtonDestructiveHover
+                  : TokensColorButtonPrimaryHover};
+        color: ${props.variant === "iconOnly"
           ? TokensColorGrayscaleBlack900
           : props.variant === "link"
             ? TokensColorButtonSecondaryHover
-            : props.variant === "destructive"
-              ? TokensColorButtonPrimaryText
-              : props.variant === "primary"
+            : props.variant === "destructiveSecondary"
+              ? TokensColorButtonDestructiveHover
+              : props.variant === "destructivePrimary"
                 ? TokensColorButtonPrimaryText
-                : props.variant === "secondary"
-                  ? TokensColorButtonSecondaryText
-                  : "inherit"};
+                : props.variant === "primary"
+                  ? TokensColorButtonPrimaryText
+                  : props.variant === "secondary"
+                    ? TokensColorButtonSecondaryText
+                    : "inherit"};
+        border-color: ${props.variant === "destructiveSecondary"
+          ? TokensColorButtonDestructiveHover
+          : "initial"};
+
+        ${props.variant === "destructiveSecondary" &&
+        css`
+          svg {
+            color: ${TokensColorButtonDestructiveHover};
+          }
+        `}
+      `}
   }
 `;
 
@@ -278,6 +319,10 @@ const Button: React.FC<ButtonProps> = ({
     iconColor = disabled
       ? TokensColorButtonDisabledDefault
       : TokensColorIconPrimaryColor;
+  } else if (variant === "destructiveSecondary") {
+    iconColor = disabled
+      ? TokensColorButtonDisabledDefault
+      : TokensColorButtonDestructiveDefault;
   } else {
     iconColor = TokensColorButtonPrimaryText;
   }
