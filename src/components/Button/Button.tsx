@@ -23,8 +23,10 @@ import {
   ButtonTextDecoration,
   FontSizeMediumIcon,
   TokensColorIconPrimaryColor,
+  SpacingSpacing2,
 } from "../../tokens/js/variables";
-import SvgNext from "../icons/Next";
+import Next from "../icons/Next";
+import iconComponents from "../icons/iconMapping";
 
 export interface ButtonProps {
   variant?: "primary" | "secondary" | "iconOnly";
@@ -32,6 +34,7 @@ export interface ButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   icon?: boolean;
+  iconType?: keyof typeof iconComponents;
 }
 
 const variantStyles = {
@@ -179,7 +182,7 @@ const StyledButton = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${(props) => (props.children && props.icon ? "8px" : "0")};
+  gap: ${(props) => (props.children && props.icon ? SpacingSpacing2 : "0")};
 
   &:hover {
     background-color: ${(props) =>
@@ -199,6 +202,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   disabled = false,
   icon = false,
+  iconType = "Next",
 }) => {
   let iconColor;
 
@@ -210,6 +214,8 @@ const Button: React.FC<ButtonProps> = ({
     iconColor = TokensColorButtonPrimaryText;
   }
 
+  const IconComponent = iconComponents[iconType] || Next;
+
   return (
     <StyledButton
       variant={variant}
@@ -218,7 +224,9 @@ const Button: React.FC<ButtonProps> = ({
       icon={icon}
     >
       {children}
-      {icon && <SvgNext size={FontSizeMediumIcon} color={iconColor} />}
+      {icon && IconComponent && (
+        <IconComponent size={FontSizeMediumIcon} color={iconColor} />
+      )}
     </StyledButton>
   );
 };

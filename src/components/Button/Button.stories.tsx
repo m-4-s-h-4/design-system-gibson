@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import Button, { ButtonProps } from "./Button";
+import iconComponents from "../icons/iconMapping";
 
 export default {
   title: "Components/Button",
@@ -29,6 +30,12 @@ export default {
         type: "boolean",
       },
     },
+    iconType: {
+      control: {
+        type: "select",
+        options: ["Next", ...Object.keys(iconComponents)],
+      },
+    },
   },
 } as Meta;
 
@@ -42,6 +49,7 @@ Primary.args = {
   variant: "primary",
   children: "Button",
   icon: false,
+  iconType: "Next",
 };
 
 Primary.argTypes = {
@@ -54,6 +62,7 @@ Secondary.args = {
   variant: "secondary",
   children: "Button",
   icon: false,
+  iconType: "Next",
 };
 
 Secondary.argTypes = {
@@ -66,6 +75,7 @@ IconOnly.args = {
   variant: "iconOnly",
   icon: true,
   children: undefined,
+  iconType: "Next",
 };
 
 IconOnly.argTypes = {
