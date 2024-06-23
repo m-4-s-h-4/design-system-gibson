@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  TokensColorIconPrimaryColor,
+  TokensIconPrimaryColor,
   FontSizeMediumIcon,
-  TokensColorButtonDisabledDefault,
+  TokensButtonDisabledDefault,
 } from "../../../tokens/js/variables";
 import iconMapping from "../../icons/iconMapping";
 
@@ -15,18 +15,18 @@ interface IconOnlyButtonProps {
 
 const StyledButton = styled.button<{ disabled?: boolean }>`
   background-color: transparent;
-  color: ${TokensColorIconPrimaryColor};
+  color: ${TokensIconPrimaryColor};
   padding: 0;
   font-size: ${FontSizeMediumIcon};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   border: none;
 
   &:hover {
-    color: ${TokensColorIconPrimaryColor};
+    color: ${TokensIconPrimaryColor};
   }
 
   &:disabled {
-    color: ${TokensColorButtonDisabledDefault};
+    color: ${TokensButtonDisabledDefault};
   }
 `;
 

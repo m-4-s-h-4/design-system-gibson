@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "build.js"],
+  "include": ["src", "build.js", "generateDeclarations.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

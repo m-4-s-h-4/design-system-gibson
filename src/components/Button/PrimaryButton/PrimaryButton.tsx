@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import {
-  TokensColorButtonPrimaryDefault,
-  TokensColorButtonPrimaryHover,
-  TokensColorButtonPrimaryText,
-  TokensColorButtonDestructiveDefault,
-  TokensColorButtonDestructiveHover,
-  TokensColorButtonDisabledDefault,
-  TokensColorButtonDisabledText,
+  TokensButtonPrimaryDefault,
+  TokensButtonPrimaryHover,
+  TokensButtonPrimaryText,
+  TokensButtonDestructiveDefault,
+  TokensButtonDestructiveHover,
+  TokensButtonDisabledDefault,
+  TokensButtonDisabledText,
   SpacingSpacing3,
   SpacingSpacing11,
   ButtonFontFamily,
@@ -38,22 +38,20 @@ const PrimaryButton = styled.button<
 
   background-color: ${(props) =>
     props.disabled
-      ? TokensColorButtonDisabledDefault
+      ? TokensButtonDisabledDefault
       : props.destructive
-        ? TokensColorButtonDestructiveDefault
-        : TokensColorButtonPrimaryDefault};
+        ? TokensButtonDestructiveDefault
+        : TokensButtonPrimaryDefault};
   color: ${(props) =>
-    props.disabled
-      ? TokensColorButtonDisabledText
-      : TokensColorButtonPrimaryText};
+    props.disabled ? TokensButtonDisabledText : TokensButtonPrimaryText};
 
   &:hover {
     background-color: ${(props) =>
       !props.disabled &&
       (props.destructive
-        ? TokensColorButtonDestructiveHover
-        : TokensColorButtonPrimaryHover)};
-    color: ${(props) => !props.disabled && TokensColorButtonPrimaryText};
+        ? TokensButtonDestructiveHover
+        : TokensButtonPrimaryHover)};
+    color: ${(props) => !props.disabled && TokensButtonPrimaryText};
   }
 `;
 

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 23 Jun 2024 11:28:53 GMT
+ * Generated on Sun, 23 Jun 2024 15:42:16 GMT
  */
 
 
@@ -41,18 +41,32 @@
   --tokens-color-secondary-yellow-yellow-dark: #8c6f1b;
   --tokens-color-secondary-yellow-yellow: #ffc10c;
   --tokens-color-secondary-yellow-yellow-light: #f9e7b5;
-  --tokens-color-button-primary-default: var(--tokens-color-primary-brown-brown-500);
-  --tokens-color-button-primary-hover: var(--tokens-color-primary-brown-brown-700);
-  --tokens-color-button-primary-text: var(--tokens-color-grayscale-white);
-  --tokens-color-button-secondary-default: var(--tokens-color-grayscale-black-900);
-  --tokens-color-button-secondary-hover: var(--tokens-color-grayscale-black-700);
-  --tokens-color-button-secondary-text: var(--tokens-color-grayscale-white);
-  --tokens-color-button-disabled-default: var(--tokens-color-grayscale-black-400);
-  --tokens-color-button-disabled-text: var(--tokens-color-grayscale-white);
-  --tokens-color-button-link-button-default: var(--tokens-color-grayscale-black-900);
-  --tokens-color-button-destructive-default: var(--tokens-color-secondary-red-red);
-  --tokens-color-button-destructive-hover: var(--tokens-color-secondary-red-red-dark);
-  --tokens-color-icon-primary-color: var(--tokens-color-grayscale-black-900);
+  --tokens-help-text-default-default: var(--tokens-color-grayscale-black-600);
+  --tokens-help-text-success-default: var(--tokens-color-secondary-green-green);
+  --tokens-help-text-warning-default: var(--tokens-color-secondary-yellow-yellow);
+  --tokens-help-text-error-default: var(--tokens-color-secondary-red-red);
+  --tokens-button-primary-default: var(--tokens-color-primary-brown-brown-500);
+  --tokens-button-primary-hover: var(--tokens-color-primary-brown-brown-700);
+  --tokens-button-primary-text: var(--tokens-color-grayscale-white);
+  --tokens-button-secondary-default: var(--tokens-color-grayscale-black-900);
+  --tokens-button-secondary-hover: var(--tokens-color-grayscale-black-700);
+  --tokens-button-secondary-text: var(--tokens-color-grayscale-white);
+  --tokens-button-disabled-default: var(--tokens-color-grayscale-black-400);
+  --tokens-button-disabled-text: var(--tokens-color-grayscale-white);
+  --tokens-button-link-button-default: var(--tokens-color-grayscale-black-900);
+  --tokens-button-destructive-default: var(--tokens-color-secondary-red-red);
+  --tokens-button-destructive-hover: var(--tokens-color-secondary-red-red-dark);
+  --tokens-icon-primary-color: var(--tokens-color-grayscale-black-900);
+  --tokens-badge-dark-bg: var(--tokens-color-grayscale-black-900);
+  --tokens-badge-light-bg: var(--tokens-color-grayscale-black-100);
+  --tokens-badge-warning-bg: var(--tokens-color-secondary-yellow-yellow-light);
+  --tokens-badge-success-bg: var(--tokens-color-secondary-green-green-light);
+  --tokens-badge-error-bg: var(--tokens-color-secondary-red-red-light);
+  --tokens-badge-text-dark: var(--tokens-color-grayscale-white);
+  --tokens-badge-text-light: var(--tokens-color-grayscale-black-900);
+  --tokens-badge-text-error: var(--tokens-color-secondary-red-red-dark);
+  --tokens-badge-text-success: var(--tokens-color-secondary-green-green-dark);
+  --tokens-badge-text-warning: var(--tokens-color-secondary-yellow-yellow-dark);
   --spacing-spacing-1: 0.25rem;
   --spacing-spacing-2: 0.5rem;
   --spacing-spacing-3: 0.75rem;
@@ -92,8 +106,8 @@
   --font-size-6: 32px;
   --font-size-7: 40px;
   --font-size-8: 48px;
-  --font-size-small-icon: 16px;
-  --font-size-medium-icon: 20px;
+  --font-size-small-icon: 12px;
+  --font-size-medium-icon: 24px;
   --font-size-large-icon: 36px;
   --letter-spacing-0: 0%;
   --paragraph-spacing-0: 0;

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 23 Jun 2024 11:28:53 GMT
+ * Generated on Sun, 23 Jun 2024 15:42:16 GMT
  */
 
 
@@ -40,18 +40,32 @@ export const TokensColorSecondaryOrangeOrangeLight = "#f79983";
 export const TokensColorSecondaryYellowYellowDark = "#8c6f1b";
 export const TokensColorSecondaryYellowYellow = "#ffc10c";
 export const TokensColorSecondaryYellowYellowLight = "#f9e7b5";
-export const TokensColorButtonPrimaryDefault = "#8f8362";
-export const TokensColorButtonPrimaryHover = "#665a3b";
-export const TokensColorButtonPrimaryText = "#ffffff";
-export const TokensColorButtonSecondaryDefault = "#1a1a1a";
-export const TokensColorButtonSecondaryHover = "#666666";
-export const TokensColorButtonSecondaryText = "#ffffff";
-export const TokensColorButtonDisabledDefault = "#d3d3d3";
-export const TokensColorButtonDisabledText = "#ffffff";
-export const TokensColorButtonLinkButtonDefault = "#1a1a1a";
-export const TokensColorButtonDestructiveDefault = "#ec2020";
-export const TokensColorButtonDestructiveHover = "#832219";
-export const TokensColorIconPrimaryColor = "#1a1a1a";
+export const TokensHelpTextDefaultDefault = "#8c8c8c";
+export const TokensHelpTextSuccessDefault = "#42b983";
+export const TokensHelpTextWarningDefault = "#ffc10c";
+export const TokensHelpTextErrorDefault = "#ec2020";
+export const TokensButtonPrimaryDefault = "#8f8362";
+export const TokensButtonPrimaryHover = "#665a3b";
+export const TokensButtonPrimaryText = "#ffffff";
+export const TokensButtonSecondaryDefault = "#1a1a1a";
+export const TokensButtonSecondaryHover = "#666666";
+export const TokensButtonSecondaryText = "#ffffff";
+export const TokensButtonDisabledDefault = "#d3d3d3";
+export const TokensButtonDisabledText = "#ffffff";
+export const TokensButtonLinkButtonDefault = "#1a1a1a";
+export const TokensButtonDestructiveDefault = "#ec2020";
+export const TokensButtonDestructiveHover = "#832219";
+export const TokensIconPrimaryColor = "#1a1a1a";
+export const TokensBadgeDarkBg = "#1a1a1a";
+export const TokensBadgeLightBg = "#f4f4f4";
+export const TokensBadgeWarningBg = "#f9e7b5";
+export const TokensBadgeSuccessBg = "#ddeeaa";
+export const TokensBadgeErrorBg = "#feb6b6";
+export const TokensBadgeTextDark = "#ffffff";
+export const TokensBadgeTextLight = "#1a1a1a";
+export const TokensBadgeTextError = "#832219";
+export const TokensBadgeTextSuccess = "#127a4b";
+export const TokensBadgeTextWarning = "#8c6f1b";
 export const SpacingSpacing1 = "0.25rem";
 export const SpacingSpacing2 = "0.5rem";
 export const SpacingSpacing3 = "0.75rem";
@@ -91,8 +105,8 @@ export const FontSize5 = "24px";
 export const FontSize6 = "32px";
 export const FontSize7 = "40px";
 export const FontSize8 = "48px";
-export const FontSizeSmallIcon = "16px";
-export const FontSizeMediumIcon = "20px";
+export const FontSizeSmallIcon = "12px";
+export const FontSizeMediumIcon = "24px";
 export const FontSizeLargeIcon = "36px";
 export const LetterSpacing0 = "0%";
 export const ParagraphSpacing0 = "0";

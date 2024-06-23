@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import {
-  TokensColorButtonLinkButtonDefault,
-  TokensColorButtonDisabledDefault,
-  TokensColorButtonSecondaryHover,
-  TokensColorButtonDestructiveDefault,
-  TokensColorButtonDestructiveHover,
+  TokensButtonLinkButtonDefault,
+  TokensButtonDisabledDefault,
+  TokensButtonSecondaryHover,
+  TokensButtonDestructiveDefault,
+  TokensButtonDestructiveHover,
   ButtonFontFamily,
   ButtonFontWeight,
   ButtonLineHeight,
@@ -20,10 +20,10 @@ const LinkButton = styled.button<BaseButtonProps & { destructive?: boolean }>`
   background-color: transparent;
   color: ${(props) =>
     props.disabled
-      ? TokensColorButtonDisabledDefault
+      ? TokensButtonDisabledDefault
       : props.destructive
-        ? TokensColorButtonDestructiveDefault
-        : TokensColorButtonLinkButtonDefault};
+        ? TokensButtonDestructiveDefault
+        : TokensButtonLinkButtonDefault};
   padding: 0;
   font-family: ${ButtonFontFamily};
   font-weight: ${ButtonFontWeight};
@@ -44,8 +44,8 @@ const LinkButton = styled.button<BaseButtonProps & { destructive?: boolean }>`
     color: ${(props) =>
       !props.disabled &&
       (props.destructive
-        ? TokensColorButtonDestructiveHover
-        : TokensColorButtonSecondaryHover)};
+        ? TokensButtonDestructiveHover
+        : TokensButtonSecondaryHover)};
   }
 `;
 
