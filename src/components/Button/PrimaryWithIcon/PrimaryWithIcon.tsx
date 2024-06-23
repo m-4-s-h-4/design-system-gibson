@@ -1,9 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 import {
   TokensColorButtonPrimaryDefault,
   TokensColorButtonPrimaryHover,
   TokensColorButtonPrimaryText,
+  TokensColorButtonDestructiveDefault,
+  TokensColorButtonDestructiveHover,
   TokensColorButtonDisabledDefault,
   TokensColorButtonDisabledText,
   SpacingSpacing3,
@@ -22,11 +23,14 @@ import { BaseButtonProps } from "../ButtonProps";
 import iconComponents from "../../icons/iconMapping";
 import Flex from "../../Layout/Flex/Flex";
 
-interface PrimaryWithIconProps extends BaseButtonProps {
+export interface ButtonWithIconProps extends BaseButtonProps {
   iconType: keyof typeof iconComponents;
+  destructive?: boolean;
 }
 
-const StyledPrimaryButton = styled.button<BaseButtonProps>`
+const StyledButtonWithIcon = styled.button<
+  BaseButtonProps & { destructive?: boolean }
+>`
   padding: ${SpacingSpacing3} ${SpacingSpacing11};
   font-family: ${ButtonFontFamily};
   font-weight: ${ButtonFontWeight};
@@ -43,7 +47,9 @@ const StyledPrimaryButton = styled.button<BaseButtonProps>`
   background-color: ${(props) =>
     props.disabled
       ? TokensColorButtonDisabledDefault
-      : TokensColorButtonPrimaryDefault};
+      : props.destructive
+        ? TokensColorButtonDestructiveDefault
+        : TokensColorButtonPrimaryDefault};
   color: ${(props) =>
     props.disabled
       ? TokensColorButtonDisabledText
@@ -51,7 +57,10 @@ const StyledPrimaryButton = styled.button<BaseButtonProps>`
 
   &:hover {
     background-color: ${(props) =>
-      !props.disabled && TokensColorButtonPrimaryHover};
+      !props.disabled &&
+      (props.destructive
+        ? TokensColorButtonDestructiveHover
+        : TokensColorButtonPrimaryHover)};
     color: ${(props) => !props.disabled && TokensColorButtonPrimaryText};
   }
 `;
@@ -60,23 +69,24 @@ const IconWrapper = styled.span`
   font-size: ${FontSizeMediumIcon};
 `;
 
-const PrimaryWithIcon: React.FC<PrimaryWithIconProps> = ({
+const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
   iconType,
   children,
+  destructive,
   ...props
 }) => {
   const IconComponent = iconComponents[iconType];
 
   return (
-    <StyledPrimaryButton {...props}>
+    <StyledButtonWithIcon {...props} destructive={destructive}>
       <Flex xAlign="center" yAlign="center" gap={SpacingSpacing0}>
         {children}
         <IconWrapper>
           <IconComponent />
         </IconWrapper>
       </Flex>
-    </StyledPrimaryButton>
+    </StyledButtonWithIcon>
   );
 };
 
-export default PrimaryWithIcon;
+export default ButtonWithIcon;

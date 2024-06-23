@@ -1,15 +1,15 @@
 import { Meta, StoryFn } from "@storybook/react";
-import Button, { ButtonProps } from "../Button";
+import ButtonWithIcon, { ButtonWithIconProps } from "./SecondaryWithIcon";
 import iconMapping from "../../icons/iconMapping";
 
 export default {
-  title: "Components/Button/SecondaryWithIcon",
-  component: Button,
+  title: "Components/Button/Secondary Button with Icon",
+  component: ButtonWithIcon,
   argTypes: {
     children: { control: { type: "text" } },
     onClick: { action: "clicked" },
     disabled: { control: { type: "boolean" } },
-    icon: { table: { disable: true } },
+    destructive: { control: { type: "boolean" } },
     iconType: {
       control: { type: "select" },
       options: Object.keys(iconMapping),
@@ -17,11 +17,20 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+const Template: StoryFn<ButtonWithIconProps & { destructive?: boolean }> = (
+  args
+) => <ButtonWithIcon {...args} />;
 
 export const SecondaryWithIcon = Template.bind({});
 SecondaryWithIcon.args = {
-  variant: "secondaryWithIcon",
   children: "Subscribe",
   iconType: "Next",
+  destructive: false,
+};
+
+export const DestructiveSecondaryWithIcon = Template.bind({});
+DestructiveSecondaryWithIcon.args = {
+  children: "Remove Item",
+  iconType: "Delete",
+  destructive: true,
 };

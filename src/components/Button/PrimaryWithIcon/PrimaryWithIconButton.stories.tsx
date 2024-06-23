@@ -1,15 +1,15 @@
 import { Meta, StoryFn } from "@storybook/react";
-import Button, { ButtonProps } from "../Button";
+import ButtonWithIcon, { ButtonWithIconProps } from "./PrimaryWithIcon";
 import iconMapping from "../../icons/iconMapping";
 
 export default {
-  title: "Components/Button/PrimaryWithIcon",
-  component: Button,
+  title: "Components/Button/Primary With Icon",
+  component: ButtonWithIcon,
   argTypes: {
     children: { control: { type: "text" } },
     onClick: { action: "clicked" },
     disabled: { control: { type: "boolean" } },
-    icon: { table: { disable: true } },
+    destructive: { control: { type: "boolean" } },
     iconType: {
       control: { type: "select" },
       options: Object.keys(iconMapping),
@@ -17,11 +17,20 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+const Template: StoryFn<ButtonWithIconProps & { destructive?: boolean }> = (
+  args
+) => <ButtonWithIcon {...args} />;
 
 export const PrimaryWithIcon = Template.bind({});
 PrimaryWithIcon.args = {
-  variant: "primaryWithIcon",
   children: "Buy Now",
   iconType: "Next",
+  destructive: false,
+};
+
+export const DestructiveWithIcon = Template.bind({});
+DestructiveWithIcon.args = {
+  children: "Delete all items",
+  iconType: "Delete",
+  destructive: true,
 };

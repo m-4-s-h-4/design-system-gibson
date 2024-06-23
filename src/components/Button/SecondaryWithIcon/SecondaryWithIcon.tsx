@@ -1,9 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 import {
   TokensColorButtonSecondaryDefault,
   TokensColorButtonSecondaryHover,
   TokensColorButtonSecondaryText,
+  TokensColorButtonDestructiveDefault,
+  TokensColorButtonDestructiveHover,
   TokensColorButtonDisabledDefault,
   TokensColorButtonDisabledText,
   SpacingSpacing3,
@@ -23,11 +24,14 @@ import { BaseButtonProps } from "../ButtonProps";
 import iconComponents from "../../icons/iconMapping";
 import Flex from "../../Layout/Flex/Flex";
 
-interface SecondaryWithIconProps extends BaseButtonProps {
+export interface ButtonWithIconProps extends BaseButtonProps {
   iconType: keyof typeof iconComponents;
+  destructive?: boolean;
 }
 
-const StyledSecondaryButton = styled.button<BaseButtonProps>`
+const StyledButtonWithIcon = styled.button<
+  BaseButtonProps & { destructive?: boolean }
+>`
   padding: ${SpacingSpacing3} ${SpacingSpacing11};
   font-family: ${ButtonFontFamily};
   font-weight: ${ButtonFontWeight};
@@ -41,20 +45,40 @@ const StyledSecondaryButton = styled.button<BaseButtonProps>`
   align-items: center;
   justify-content: center;
   gap: ${SpacingSpacing2};
-  border: none;
+  border: ${(props) =>
+    props.destructive
+      ? `2px solid ${props.disabled ? TokensColorButtonDisabledDefault : TokensColorButtonDestructiveDefault}`
+      : "none"};
   background-color: ${(props) =>
-    props.disabled
-      ? TokensColorButtonDisabledDefault
-      : TokensColorButtonSecondaryDefault};
+    props.disabled && props.destructive
+      ? "transparent"
+      : props.disabled
+        ? TokensColorButtonDisabledDefault
+        : props.destructive
+          ? "transparent"
+          : TokensColorButtonSecondaryDefault};
   color: ${(props) =>
-    props.disabled
-      ? TokensColorButtonDisabledText
-      : TokensColorButtonSecondaryText};
+    props.disabled && props.destructive
+      ? TokensColorButtonDisabledDefault
+      : props.disabled
+        ? TokensColorButtonDisabledText
+        : props.destructive
+          ? TokensColorButtonDestructiveDefault
+          : TokensColorButtonSecondaryText};
 
   &:hover {
     background-color: ${(props) =>
-      !props.disabled && TokensColorButtonSecondaryHover};
-    color: ${(props) => !props.disabled && TokensColorButtonSecondaryText};
+      !props.disabled &&
+      (props.destructive ? "transparent" : TokensColorButtonSecondaryHover)};
+    color: ${(props) =>
+      !props.disabled &&
+      (props.destructive
+        ? TokensColorButtonDestructiveHover
+        : TokensColorButtonSecondaryText)};
+    border-color: ${(props) =>
+      props.destructive &&
+      !props.disabled &&
+      TokensColorButtonDestructiveHover};
   }
 `;
 
@@ -62,23 +86,24 @@ const IconWrapper = styled.span`
   font-size: ${FontSizeMediumIcon};
 `;
 
-const SecondaryWithIcon: React.FC<SecondaryWithIconProps> = ({
+const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
   iconType,
   children,
+  destructive,
   ...props
 }) => {
   const IconComponent = iconComponents[iconType];
 
   return (
-    <StyledSecondaryButton {...props}>
+    <StyledButtonWithIcon {...props} destructive={destructive}>
       <Flex xAlign="center" yAlign="center" gap={SpacingSpacing0}>
         {children}
         <IconWrapper>
           <IconComponent />
         </IconWrapper>
       </Flex>
-    </StyledSecondaryButton>
+    </StyledButtonWithIcon>
   );
 };
 
-export default SecondaryWithIcon;
+export default ButtonWithIcon;

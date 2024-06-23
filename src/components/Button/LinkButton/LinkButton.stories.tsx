@@ -1,22 +1,32 @@
 import { Meta, StoryFn } from "@storybook/react";
-import Button, { ButtonProps } from "../Button";
+import LinkButton from "./LinkButton";
+import { ButtonProps } from "../Button";
 
 export default {
-  title: "Components/Button/Link",
-  component: Button,
+  title: "Components/Button/Link Button",
+  component: LinkButton,
   argTypes: {
     children: { control: { type: "text" } },
     onClick: { action: "clicked" },
     disabled: { control: { type: "boolean" } },
-    icon: { table: { disable: true } },
-    iconType: { table: { disable: true } },
+    destructive: { control: { type: "boolean" } },
   },
 } as Meta;
 
-const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+const Template: StoryFn<ButtonProps & { destructive?: boolean }> = (args) => (
+  <LinkButton {...args} />
+);
 
 export const Link = Template.bind({});
 Link.args = {
   variant: "link",
   children: "Shipping & Returns Policy",
+  destructive: false,
+};
+
+export const DestructiveLink = Template.bind({});
+DestructiveLink.args = {
+  variant: "link",
+  children: "Delete Account",
+  destructive: true,
 };

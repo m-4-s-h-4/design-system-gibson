@@ -3,6 +3,8 @@ import {
   TokensColorButtonLinkButtonDefault,
   TokensColorButtonDisabledDefault,
   TokensColorButtonSecondaryHover,
+  TokensColorButtonDestructiveDefault,
+  TokensColorButtonDestructiveHover,
   ButtonFontFamily,
   ButtonFontWeight,
   ButtonLineHeight,
@@ -10,15 +12,18 @@ import {
   ButtonLetterSpacing,
   ButtonTextCase,
   TextDecorationUnderline,
+  TextDecorationNone,
 } from "../../../tokens/js/variables";
 import { BaseButtonProps } from "../ButtonProps";
 
-const LinkButton = styled.button<BaseButtonProps>`
+const LinkButton = styled.button<BaseButtonProps & { destructive?: boolean }>`
   background-color: transparent;
   color: ${(props) =>
     props.disabled
       ? TokensColorButtonDisabledDefault
-      : TokensColorButtonLinkButtonDefault};
+      : props.destructive
+        ? TokensColorButtonDestructiveDefault
+        : TokensColorButtonLinkButtonDefault};
   padding: 0;
   font-family: ${ButtonFontFamily};
   font-weight: ${ButtonFontWeight};
@@ -26,7 +31,8 @@ const LinkButton = styled.button<BaseButtonProps>`
   font-size: ${ButtonFontSize};
   letter-spacing: ${ButtonLetterSpacing};
   text-transform: ${ButtonTextCase};
-  text-decoration: ${TextDecorationUnderline};
+  text-decoration: ${(props) =>
+    props.destructive ? TextDecorationNone : TextDecorationUnderline};
   text-decoration-thickness: ${() => "3px"};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   display: flex;
@@ -35,7 +41,11 @@ const LinkButton = styled.button<BaseButtonProps>`
   border: none;
 
   &:hover {
-    color: ${(props) => !props.disabled && TokensColorButtonSecondaryHover};
+    color: ${(props) =>
+      !props.disabled &&
+      (props.destructive
+        ? TokensColorButtonDestructiveHover
+        : TokensColorButtonSecondaryHover)};
   }
 `;
 

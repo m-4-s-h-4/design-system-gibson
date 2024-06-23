@@ -1,24 +1,32 @@
 import { Meta, StoryFn } from "@storybook/react";
-import Button, { ButtonProps } from "../Button";
+import PrimaryButton from "./PrimaryButton";
+import { ButtonProps } from "../Button";
 
 export default {
-  title: "Components/Button/Primary",
-  component: Button,
+  title: "Components/Button/Primary Button",
+  component: PrimaryButton,
   argTypes: {
     children: {
       control: { type: "text" },
     },
     onClick: { action: "clicked" },
     disabled: { control: { type: "boolean" } },
-    icon: { table: { disable: true } },
-    iconType: { table: { disable: true } },
+    destructive: { control: { type: "boolean" } },
   },
 } as Meta;
 
-const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+const Template: StoryFn<ButtonProps & { destructive?: boolean }> = (args) => (
+  <PrimaryButton {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
-  variant: "primary",
   children: "Buy Now",
+  destructive: false,
+};
+
+export const PrimaryDestructive = Template.bind({});
+PrimaryDestructive.args = {
+  children: "Delete All Items",
+  destructive: true,
 };

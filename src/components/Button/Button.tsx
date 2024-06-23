@@ -1,42 +1,27 @@
 import React from "react";
-import PrimaryButton from "./PrimaryButton/PrimaryButton";
 import SecondaryButton from "./SecondaryButton/SecondaryButton";
-import DestructivePrimaryButton from "./DestructivePrimary/DestructivePrimaryButton";
-import DestructiveSecondaryButton from "./DestructiveSecondary/DestructiveSecondaryButton";
 import IconOnlyButton from "./IconOnlyButton/IconOnlyButton";
 import LinkButton from "./LinkButton/LinkButton";
-import DestructiveLink from "./DestructiveLink/DestructiveLink";
 import PrimaryWithIcon from "./PrimaryWithIcon/PrimaryWithIcon";
 import SecondaryWithIcon from "./SecondaryWithIcon/SecondaryWithIcon";
-import DestructiveWithIcon from "./DestructiveWithIcon/DestructiveWithIcon";
-import DestructiveSecondaryWithIcon from "./DestructiveSecondaryWithIcon/DestructiveSecondaryWithIcon";
 import iconComponents from "../icons/iconMapping";
+import PrimaryButton from "./PrimaryButton/PrimaryButton";
 
 type ButtonVariant =
   | "primary"
   | "secondary"
-  | "destructivePrimary"
-  | "destructiveSecondary"
   | "iconOnly"
   | "link"
-  | "destructiveLink"
   | "primaryWithIcon"
-  | "secondaryWithIcon"
-  | "destructiveWithIcon"
-  | "destructiveSecondaryWithIcon";
+  | "secondaryWithIcon";
 
 const variantMapping: Record<ButtonVariant, React.ComponentType<any>> = {
   primary: PrimaryButton,
   secondary: SecondaryButton,
-  destructivePrimary: DestructivePrimaryButton,
-  destructiveSecondary: DestructiveSecondaryButton,
   iconOnly: IconOnlyButton,
   link: LinkButton,
-  destructiveLink: DestructiveLink,
   primaryWithIcon: PrimaryWithIcon,
   secondaryWithIcon: SecondaryWithIcon,
-  destructiveWithIcon: DestructiveWithIcon,
-  destructiveSecondaryWithIcon: DestructiveSecondaryWithIcon,
 };
 
 export interface ButtonProps {

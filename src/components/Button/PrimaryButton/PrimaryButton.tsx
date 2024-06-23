@@ -3,6 +3,8 @@ import {
   TokensColorButtonPrimaryDefault,
   TokensColorButtonPrimaryHover,
   TokensColorButtonPrimaryText,
+  TokensColorButtonDestructiveDefault,
+  TokensColorButtonDestructiveHover,
   TokensColorButtonDisabledDefault,
   TokensColorButtonDisabledText,
   SpacingSpacing3,
@@ -17,7 +19,9 @@ import {
 } from "../../../tokens/js/variables";
 import { BaseButtonProps } from "../ButtonProps";
 
-const PrimaryButton = styled.button<BaseButtonProps>`
+const PrimaryButton = styled.button<
+  BaseButtonProps & { destructive?: boolean }
+>`
   padding: ${SpacingSpacing3} ${SpacingSpacing11};
   font-family: ${ButtonFontFamily};
   font-weight: ${ButtonFontWeight};
@@ -35,7 +39,9 @@ const PrimaryButton = styled.button<BaseButtonProps>`
   background-color: ${(props) =>
     props.disabled
       ? TokensColorButtonDisabledDefault
-      : TokensColorButtonPrimaryDefault};
+      : props.destructive
+        ? TokensColorButtonDestructiveDefault
+        : TokensColorButtonPrimaryDefault};
   color: ${(props) =>
     props.disabled
       ? TokensColorButtonDisabledText
@@ -43,7 +49,10 @@ const PrimaryButton = styled.button<BaseButtonProps>`
 
   &:hover {
     background-color: ${(props) =>
-      !props.disabled && TokensColorButtonPrimaryHover};
+      !props.disabled &&
+      (props.destructive
+        ? TokensColorButtonDestructiveHover
+        : TokensColorButtonPrimaryHover)};
     color: ${(props) => !props.disabled && TokensColorButtonPrimaryText};
   }
 `;
