@@ -18,7 +18,6 @@ import {
 import SuccessIcon from "../icons/Success";
 import WarningIcon from "../icons/Warning";
 import ErrorIcon from "../icons/Error";
-import Flex from "../Layout/Flex/Flex";
 
 export interface HelpTextProps {
   variant?: "default" | "error" | "warning" | "success";
@@ -28,6 +27,7 @@ export interface HelpTextProps {
 const variantStyles = {
   default: {
     color: TokensHelpTextDefaultDefault,
+    icon: null,
   },
   error: {
     color: TokensHelpTextErrorDefault,
@@ -55,18 +55,21 @@ const StyledHelpText = styled.span<{
   text-decoration: ${CaptionTextDecoration};
   text-transform: ${CaptionTextCase};
   color: ${(props) => variantStyles[props.variant].color};
+  display: inline-flex;
+  align-items: center;
+  gap: ${SpacingSpacing1};
 `;
 
 const HelpText: React.FC<HelpTextProps> = ({
   variant = "default",
   children,
 }) => {
-  const icon = variant !== "default" ? variantStyles[variant].icon : null;
+  const icon = variantStyles[variant].icon;
   return (
-    <Flex gap={SpacingSpacing1}>
+    <StyledHelpText variant={variant}>
       {icon}
-      <StyledHelpText variant={variant}>{children}</StyledHelpText>
-    </Flex>
+      {children}
+    </StyledHelpText>
   );
 };
 
