@@ -26,29 +26,29 @@ const Template: StoryFn<BadgeWithIconProps> = (args) => (
 export const Dark = Template.bind({});
 Dark.args = {
   variant: "dark",
-  children: "Dark Badge",
+  children: "New Release",
 };
 
 export const Light = Template.bind({});
 Light.args = {
   variant: "light",
-  children: "Light Badge",
+  children: "Customer Support",
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
   variant: "warning",
-  children: "Warning Badge",
+  children: "Connection Lost",
 };
 
 export const Success = Template.bind({});
 Success.args = {
   variant: "success",
-  children: "Success Badge",
+  children: "Purchase Complete",
 };
 
 export const Error = Template.bind({});
 Error.args = {
   variant: "error",
-  children: "Error Badge",
+  children: "No items left",
 };
