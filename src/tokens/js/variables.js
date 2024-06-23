@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 23 Jun 2024 15:42:16 GMT
+ * Generated on Sun, 23 Jun 2024 15:58:22 GMT
  */
 
 
@@ -66,6 +66,11 @@ export const TokensBadgeTextLight = "#1a1a1a";
 export const TokensBadgeTextError = "#832219";
 export const TokensBadgeTextSuccess = "#127a4b";
 export const TokensBadgeTextWarning = "#8c6f1b";
+export const TokensBadgeHooverTextDark = "#bfbfbf";
+export const TokensBadgeHooverTextLight = "#666666";
+export const TokensBadgeHooverTextError = "#ec2020";
+export const TokensBadgeHooverTextSuccess = "#42b983";
+export const TokensBadgeHooverTextWarning = "#ffc10c";
 export const SpacingSpacing1 = "0.25rem";
 export const SpacingSpacing2 = "0.5rem";
 export const SpacingSpacing3 = "0.75rem";
