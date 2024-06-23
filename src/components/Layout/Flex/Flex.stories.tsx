@@ -55,8 +55,8 @@ const Template: StoryFn = (args) => (
   </Flex>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Horizontal = Template.bind({});
+Horizontal.args = {
   grow: 0,
   shrink: 1,
   direction: "row",
