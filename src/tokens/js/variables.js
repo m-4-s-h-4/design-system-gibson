@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Jun 2024 14:16:47 GMT
+ * Generated on Sun, 23 Jun 2024 11:03:18 GMT
  */
 
 
@@ -92,7 +92,7 @@ export const FontSize6 = "32px";
 export const FontSize7 = "40px";
 export const FontSize8 = "48px";
 export const FontSizeSmallIcon = "16px";
-export const FontSizeMediumIcon = "24px";
+export const FontSizeMediumIcon = "20px";
 export const FontSizeLargeIcon = "36px";
 export const LetterSpacing0 = "0%";
 export const ParagraphSpacing0 = "0";
