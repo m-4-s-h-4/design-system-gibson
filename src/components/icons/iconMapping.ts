@@ -23,7 +23,7 @@ import Calendar from "./Calendar";
 import Back from "./Back";
 import Add from "./Add";
 
-const iconComponents = {
+const iconMapping = {
   VolumeMute,
   VolumeOn,
   VolumeOff,
@@ -50,4 +50,4 @@ const iconComponents = {
   Add,
 };
 
-export default iconComponents;
+export default iconMapping;
