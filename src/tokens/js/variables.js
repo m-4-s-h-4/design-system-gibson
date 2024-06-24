@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 24 Jun 2024 13:08:44 GMT
+ * Generated on Mon, 24 Jun 2024 14:37:12 GMT
  */
 
 
@@ -40,40 +40,10 @@ export const TokensColorSecondaryOrangeOrangeLight = "#f79983";
 export const TokensColorSecondaryYellowYellowDark = "#8c6f1b";
 export const TokensColorSecondaryYellowYellow = "#ffc10c";
 export const TokensColorSecondaryYellowYellowLight = "#f9e7b5";
-export const TokensHelpTextDefaultDefault = "#8c8c8c";
-export const TokensHelpTextSuccessDefault = "#42b983";
-export const TokensHelpTextWarningDefault = "#ffc10c";
-export const TokensHelpTextErrorDefault = "#ec2020";
-export const TokensButtonPrimaryDefault = "#8f8362";
-export const TokensButtonPrimaryHover = "#665a3b";
-export const TokensButtonPrimaryText = "#ffffff";
-export const TokensButtonSecondaryDefault = "#1a1a1a";
-export const TokensButtonSecondaryHover = "#666666";
-export const TokensButtonSecondaryText = "#ffffff";
-export const TokensButtonDisabledDefault = "#d3d3d3";
-export const TokensButtonDisabledText = "#ffffff";
-export const TokensButtonLinkButtonDefault = "#1a1a1a";
-export const TokensButtonDestructiveDefault = "#ec2020";
-export const TokensButtonDestructiveHover = "#832219";
-export const TokensIconPrimaryColor = "#1a1a1a";
-export const TokensBadgeDarkBg = "#1a1a1a";
-export const TokensBadgeLightBg = "#f4f4f4";
-export const TokensBadgeBrownBg = "#8f8362";
-export const TokensBadgeWarningBg = "#f9e7b5";
-export const TokensBadgeSuccessBg = "#ddeeaa";
-export const TokensBadgeErrorBg = "#feb6b6";
-export const TokensBadgeTextDark = "#ffffff";
-export const TokensBadgeTextLight = "#1a1a1a";
-export const TokensBadgeTextBrown = "#ffffff";
-export const TokensBadgeTextError = "#832219";
-export const TokensBadgeTextSuccess = "#127a4b";
-export const TokensBadgeTextWarning = "#8c6f1b";
-export const TokensBadgeHooverTextDark = "#bfbfbf";
-export const TokensBadgeHooverTextLight = "#666666";
-export const TokensBadgeHooverTextBrown = "#c3b59b";
-export const TokensBadgeHooverTextError = "#ec2020";
-export const TokensBadgeHooverTextSuccess = "#42b983";
-export const TokensBadgeHooverTextWarning = "#ffc10c";
+export const TokensCardDefaultBg = "#ffffff";
+export const TokensCardDefaultHoverBg = "#f4f4f4";
+export const TokensCardDefaultBorder = "#e6e6e6";
+export const TokensCardDefaultText = "#1a1a1a";
 export const SpacingSpacing1 = "0.25rem";
 export const SpacingSpacing2 = "0.5rem";
 export const SpacingSpacing3 = "0.75rem";

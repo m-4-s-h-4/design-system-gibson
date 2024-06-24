@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 24 Jun 2024 13:08:44 GMT
+ * Generated on Mon, 24 Jun 2024 14:37:12 GMT
  */
 
 
@@ -41,40 +41,10 @@
   --tokens-color-secondary-yellow-yellow-dark: #8c6f1b;
   --tokens-color-secondary-yellow-yellow: #ffc10c;
   --tokens-color-secondary-yellow-yellow-light: #f9e7b5;
-  --tokens-help-text-default-default: var(--tokens-color-grayscale-black-600);
-  --tokens-help-text-success-default: var(--tokens-color-secondary-green-green);
-  --tokens-help-text-warning-default: var(--tokens-color-secondary-yellow-yellow);
-  --tokens-help-text-error-default: var(--tokens-color-secondary-red-red);
-  --tokens-button-primary-default: var(--tokens-color-primary-brown-brown-500);
-  --tokens-button-primary-hover: var(--tokens-color-primary-brown-brown-700);
-  --tokens-button-primary-text: var(--tokens-color-grayscale-white);
-  --tokens-button-secondary-default: var(--tokens-color-grayscale-black-900);
-  --tokens-button-secondary-hover: var(--tokens-color-grayscale-black-700);
-  --tokens-button-secondary-text: var(--tokens-color-grayscale-white);
-  --tokens-button-disabled-default: var(--tokens-color-grayscale-black-400);
-  --tokens-button-disabled-text: var(--tokens-color-grayscale-white);
-  --tokens-button-link-button-default: var(--tokens-color-grayscale-black-900);
-  --tokens-button-destructive-default: var(--tokens-color-secondary-red-red);
-  --tokens-button-destructive-hover: var(--tokens-color-secondary-red-red-dark);
-  --tokens-icon-primary-color: var(--tokens-color-grayscale-black-900);
-  --tokens-badge-dark-bg: var(--tokens-color-grayscale-black-900);
-  --tokens-badge-light-bg: var(--tokens-color-grayscale-black-100);
-  --tokens-badge-brown-bg: var(--tokens-color-primary-brown-brown-500);
-  --tokens-badge-warning-bg: var(--tokens-color-secondary-yellow-yellow-light);
-  --tokens-badge-success-bg: var(--tokens-color-secondary-green-green-light);
-  --tokens-badge-error-bg: var(--tokens-color-secondary-red-red-light);
-  --tokens-badge-text-dark: var(--tokens-color-grayscale-white);
-  --tokens-badge-text-light: var(--tokens-color-grayscale-black-900);
-  --tokens-badge-text-brown: var(--tokens-color-grayscale-white);
-  --tokens-badge-text-error: var(--tokens-color-secondary-red-red-dark);
-  --tokens-badge-text-success: var(--tokens-color-secondary-green-green-dark);
-  --tokens-badge-text-warning: var(--tokens-color-secondary-yellow-yellow-dark);
-  --tokens-badge-hoover-text-dark: var(--tokens-color-grayscale-black-500);
-  --tokens-badge-hoover-text-light: var(--tokens-color-grayscale-black-700);
-  --tokens-badge-hoover-text-brown: var(--tokens-color-primary-brown-brown-100);
-  --tokens-badge-hoover-text-error: var(--tokens-color-secondary-red-red);
-  --tokens-badge-hoover-text-success: var(--tokens-color-secondary-green-green);
-  --tokens-badge-hoover-text-warning: var(--tokens-color-secondary-yellow-yellow);
+  --tokens-card-default-bg: var(--tokens-color-grayscale-white);
+  --tokens-card-default-hover-bg: var(--tokens-color-grayscale-black-100);
+  --tokens-card-default-border: var(--tokens-color-grayscale-black-300);
+  --tokens-card-default-text: var(--tokens-color-grayscale-black-900);
   --spacing-spacing-1: 0.25rem;
   --spacing-spacing-2: 0.5rem;
   --spacing-spacing-3: 0.75rem;
