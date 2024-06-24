@@ -25,7 +25,7 @@ import {
   BodySmallParagraphSpacing,
   BodySmallTextDecoration,
   BodySmallTextCase,
-} from "../../tokens/js/variables";
+} from "../../../tokens/js/variables";
 
 const variantStyles = {
   large: {

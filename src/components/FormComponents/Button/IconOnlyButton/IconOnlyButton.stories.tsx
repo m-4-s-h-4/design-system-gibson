@@ -1,9 +1,9 @@
 import { Meta, StoryFn } from "@storybook/react";
 import IconOnlyButton from "./IconOnlyButton";
-import iconMapping from "../../icons/iconMapping";
+import iconMapping from "../../../../assets/icons/iconMapping";
 
 export default {
-  title: "Components/Form components/Button/IconOnlyButton",
+  title: "Components/Form components/Button/Icon Only Button",
   component: IconOnlyButton,
   argTypes: {
     onClick: { action: "clicked" },

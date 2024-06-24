@@ -4,7 +4,7 @@ import IconOnlyButton from "./IconOnlyButton/IconOnlyButton";
 import LinkButton from "./LinkButton/LinkButton";
 import PrimaryWithIcon from "./PrimaryWithIcon/PrimaryWithIcon";
 import SecondaryWithIcon from "./SecondaryWithIcon/SecondaryWithIcon";
-import iconComponents from "../icons/iconMapping";
+import iconComponents from "../../../assets/icons/iconMapping";
 import PrimaryButton from "./PrimaryButton/PrimaryButton";
 
 type ButtonVariant =

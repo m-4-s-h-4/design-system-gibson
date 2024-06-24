@@ -9,6 +9,7 @@ import {
   TokensButtonDisabledText,
   SpacingSpacing3,
   SpacingSpacing11,
+  SpacingSpacing2,
   ButtonFontFamily,
   ButtonFontWeight,
   ButtonLineHeight,
@@ -16,20 +17,10 @@ import {
   ButtonLetterSpacing,
   ButtonTextCase,
   ButtonTextDecoration,
-  FontSizeMediumIcon,
-  SpacingSpacing2,
-  SpacingSpacing0,
-} from "../../../tokens/js/variables";
+} from "../../../../tokens/js/variables";
 import { BaseButtonProps } from "../ButtonProps";
-import iconComponents from "../../icons/iconMapping";
-import Flex from "../../Layout/Flex/Flex";
 
-export interface ButtonWithIconProps extends BaseButtonProps {
-  iconType: keyof typeof iconComponents;
-  destructive?: boolean;
-}
-
-const StyledButtonWithIcon = styled.button<
+const SecondaryButton = styled.button<
   BaseButtonProps & { destructive?: boolean }
 >`
   padding: ${SpacingSpacing3} ${SpacingSpacing11};
@@ -80,28 +71,4 @@ const StyledButtonWithIcon = styled.button<
   }
 `;
 
-const IconWrapper = styled.span`
-  font-size: ${FontSizeMediumIcon};
-`;
-
-const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
-  iconType,
-  children,
-  destructive,
-  ...props
-}) => {
-  const IconComponent = iconComponents[iconType];
-
-  return (
-    <StyledButtonWithIcon {...props} destructive={destructive}>
-      <Flex xAlign="center" yAlign="center" gap={SpacingSpacing0}>
-        {children}
-        <IconWrapper>
-          <IconComponent />
-        </IconWrapper>
-      </Flex>
-    </StyledButtonWithIcon>
-  );
-};
-
-export default ButtonWithIcon;
+export default SecondaryButton;

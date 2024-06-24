@@ -4,8 +4,8 @@ import {
   TokensIconPrimaryColor,
   FontSizeMediumIcon,
   TokensButtonDisabledDefault,
-} from "../../../tokens/js/variables";
-import iconMapping from "../../icons/iconMapping";
+} from "../../../../tokens/js/variables";
+import iconMapping from "../../../../assets/icons/iconMapping";
 
 interface IconOnlyButtonProps {
   onClick?: () => void;

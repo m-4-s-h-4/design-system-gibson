@@ -13,7 +13,7 @@ import {
   ButtonTextCase,
   TextDecorationUnderline,
   TextDecorationNone,
-} from "../../../tokens/js/variables";
+} from "../../../../tokens/js/variables";
 import { BaseButtonProps } from "../ButtonProps";
 
 const LinkButton = styled.button<BaseButtonProps & { destructive?: boolean }>`

@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import ButtonWithIcon, { ButtonWithIconProps } from "./SecondaryWithIcon";
-import iconMapping from "../../icons/iconMapping";
+import iconMapping from "../../../../assets/icons/iconMapping";
 
 export default {
   title:

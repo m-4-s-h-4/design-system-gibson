@@ -14,10 +14,10 @@ import {
   TokensHelpTextErrorDefault,
   SpacingSpacing1,
   FontSizeSmallIcon,
-} from "../../tokens/js/variables";
-import SuccessIcon from "../icons/Success";
-import WarningIcon from "../icons/Warning";
-import ErrorIcon from "../icons/Error";
+} from "../../../tokens/js/variables";
+import SuccessIcon from "../../../assets/icons/Success";
+import WarningIcon from "../../../assets/icons/Warning";
+import ErrorIcon from "../../../assets/icons/Error";
 
 export interface HelpTextProps {
   variant?: "default" | "error" | "warning" | "success";

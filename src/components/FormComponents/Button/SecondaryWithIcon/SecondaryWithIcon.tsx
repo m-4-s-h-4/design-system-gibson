@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {
-  TokensButtonPrimaryDefault,
-  TokensButtonPrimaryHover,
-  TokensButtonPrimaryText,
+  TokensButtonSecondaryDefault,
+  TokensButtonSecondaryHover,
+  TokensButtonSecondaryText,
   TokensButtonDestructiveDefault,
   TokensButtonDestructiveHover,
   TokensButtonDisabledDefault,
@@ -17,11 +17,12 @@ import {
   ButtonTextCase,
   ButtonTextDecoration,
   FontSizeMediumIcon,
+  SpacingSpacing2,
   SpacingSpacing0,
-} from "../../../tokens/js/variables";
+} from "../../../../tokens/js/variables";
 import { BaseButtonProps } from "../ButtonProps";
-import iconComponents from "../../icons/iconMapping";
-import Flex from "../../Layout/Flex/Flex";
+import iconComponents from "../../../../assets/icons/iconMapping";
+import Flex from "../../../LayoutComponents/Flex/Flex";
 
 export interface ButtonWithIconProps extends BaseButtonProps {
   iconType: keyof typeof iconComponents;
@@ -43,23 +44,39 @@ const StyledButtonWithIcon = styled.button<
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  gap: ${SpacingSpacing2};
+  border: ${(props) =>
+    props.destructive
+      ? `2px solid ${props.disabled ? TokensButtonDisabledDefault : TokensButtonDestructiveDefault}`
+      : "none"};
   background-color: ${(props) =>
-    props.disabled
-      ? TokensButtonDisabledDefault
-      : props.destructive
-        ? TokensButtonDestructiveDefault
-        : TokensButtonPrimaryDefault};
+    props.disabled && props.destructive
+      ? "transparent"
+      : props.disabled
+        ? TokensButtonDisabledDefault
+        : props.destructive
+          ? "transparent"
+          : TokensButtonSecondaryDefault};
   color: ${(props) =>
-    props.disabled ? TokensButtonDisabledText : TokensButtonPrimaryText};
+    props.disabled && props.destructive
+      ? TokensButtonDisabledDefault
+      : props.disabled
+        ? TokensButtonDisabledText
+        : props.destructive
+          ? TokensButtonDestructiveDefault
+          : TokensButtonSecondaryText};
 
   &:hover {
     background-color: ${(props) =>
       !props.disabled &&
+      (props.destructive ? "transparent" : TokensButtonSecondaryHover)};
+    color: ${(props) =>
+      !props.disabled &&
       (props.destructive
         ? TokensButtonDestructiveHover
-        : TokensButtonPrimaryHover)};
-    color: ${(props) => !props.disabled && TokensButtonPrimaryText};
+        : TokensButtonSecondaryText)};
+    border-color: ${(props) =>
+      props.destructive && !props.disabled && TokensButtonDestructiveHover};
   }
 `;
 

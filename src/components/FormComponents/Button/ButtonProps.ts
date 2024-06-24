@@ -6,5 +6,5 @@ export interface BaseButtonProps {
 }
 
 export interface ButtonProps extends BaseButtonProps {
-  iconType?: keyof typeof import("../icons/iconMapping").default;
+  iconType?: keyof typeof import("../../../assets/icons/iconMapping").default;
 }

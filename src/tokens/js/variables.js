@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 23 Jun 2024 15:58:22 GMT
+ * Generated on Mon, 24 Jun 2024 13:08:44 GMT
  */
 
 
@@ -58,16 +58,19 @@ export const TokensButtonDestructiveHover = "#832219";
 export const TokensIconPrimaryColor = "#1a1a1a";
 export const TokensBadgeDarkBg = "#1a1a1a";
 export const TokensBadgeLightBg = "#f4f4f4";
+export const TokensBadgeBrownBg = "#8f8362";
 export const TokensBadgeWarningBg = "#f9e7b5";
 export const TokensBadgeSuccessBg = "#ddeeaa";
 export const TokensBadgeErrorBg = "#feb6b6";
 export const TokensBadgeTextDark = "#ffffff";
 export const TokensBadgeTextLight = "#1a1a1a";
+export const TokensBadgeTextBrown = "#ffffff";
 export const TokensBadgeTextError = "#832219";
 export const TokensBadgeTextSuccess = "#127a4b";
 export const TokensBadgeTextWarning = "#8c6f1b";
 export const TokensBadgeHooverTextDark = "#bfbfbf";
 export const TokensBadgeHooverTextLight = "#666666";
+export const TokensBadgeHooverTextBrown = "#c3b59b";
 export const TokensBadgeHooverTextError = "#ec2020";
 export const TokensBadgeHooverTextSuccess = "#42b983";
 export const TokensBadgeHooverTextWarning = "#ffc10c";

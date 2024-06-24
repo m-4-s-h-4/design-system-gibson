@@ -41,7 +41,7 @@ import {
   H5HeadingMainParagraphSpacing,
   H5HeadingMainTextDecoration,
   H5HeadingMainTextCase,
-} from "../../tokens/js/variables";
+} from "../../../tokens/js/variables";
 
 export interface HeadingProps {
   as: "h1" | "h2" | "h3" | "h4" | "h5";
