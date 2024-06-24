@@ -3,7 +3,7 @@ import ButtonWithIcon, { ButtonWithIconProps } from "./PrimaryWithIcon";
 import iconMapping from "../../icons/iconMapping";
 
 export default {
-  title: "Components/Button/Primary With Icon",
+  title: "Components/Form components/Button/Primary Button/Primary With Icon",
   component: ButtonWithIcon,
   argTypes: {
     children: { control: { type: "text" } },

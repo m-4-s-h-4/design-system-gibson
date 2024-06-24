@@ -3,7 +3,7 @@ import LinkButton from "./LinkButton";
 import { ButtonProps } from "../Button";
 
 export default {
-  title: "Components/Button/Link Button",
+  title: "Components/Form components/Button/Link Button",
   component: LinkButton,
   argTypes: {
     children: { control: { type: "text" } },

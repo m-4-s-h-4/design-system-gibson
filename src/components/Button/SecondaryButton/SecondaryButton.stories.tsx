@@ -3,7 +3,7 @@ import SecondaryButton from "./SecondaryButton";
 import { ButtonProps } from "../Button";
 
 export default {
-  title: "Components/Button/Secondary Button",
+  title: "Components/Form components/Button/Secondary Button/Secondary Button",
   component: SecondaryButton,
   argTypes: {
     children: {

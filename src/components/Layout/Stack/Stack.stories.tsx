@@ -3,7 +3,7 @@ import Stack, { StackProps } from "./Stack";
 import StyledBox from "../../Box/StyledBox";
 
 export default {
-  title: "Components/Stack",
+  title: "Components/Layout Components/Stack Layout",
   component: Stack,
   argTypes: {
     orientation: {

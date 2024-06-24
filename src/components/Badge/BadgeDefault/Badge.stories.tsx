@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import Badge, { BadgeProps } from "./Badge";
 
 export default {
-  title: "Components/Badge/Badge",
+  title: "Components/Text content components/Badge/Badge",
   component: Badge,
   argTypes: {
     variant: {

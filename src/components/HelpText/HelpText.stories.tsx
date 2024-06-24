@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import HelpText, { HelpTextProps } from "./HelpText";
 
 export default {
-  title: "Components/HelpText",
+  title: "Components/Form components/Help Text",
   component: HelpText,
   argTypes: {
     variant: {

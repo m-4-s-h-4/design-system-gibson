@@ -3,7 +3,7 @@ import IconOnlyButton from "./IconOnlyButton";
 import iconMapping from "../../icons/iconMapping";
 
 export default {
-  title: "Components/Button/IconOnlyButton",
+  title: "Components/Form components/Button/IconOnlyButton",
   component: IconOnlyButton,
   argTypes: {
     onClick: { action: "clicked" },

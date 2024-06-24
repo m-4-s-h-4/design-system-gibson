@@ -3,7 +3,7 @@ import Flex from "./Flex";
 import StyledBox from "../../Box/StyledBox";
 
 export default {
-  title: "Components/Flex",
+  title: "Components/Layout Components/Flex Layout",
   component: Flex,
   argTypes: {
     grow: { control: { type: "number" } },

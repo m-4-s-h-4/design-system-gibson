@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import List, { ListProps, ListItem } from "./List";
 
 export default {
-  title: "Components/List",
+  title: "Components/Text content components/List",
   component: List,
   argTypes: {
     ordered: {
