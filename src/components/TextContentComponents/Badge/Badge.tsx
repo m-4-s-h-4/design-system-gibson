@@ -36,7 +36,7 @@ import WarningIcon from "../../../assets/icons/Warning";
 import ErrorIcon from "../../../assets/icons/Error";
 import ClearIcon from "../../../assets/icons/Clear";
 
-export interface BadgeWithIconProps {
+export interface BadgeProps {
   variant?: "dark" | "light" | "brown" | "warning" | "success" | "error";
   children: React.ReactNode;
   showIcon?: boolean;
@@ -98,12 +98,13 @@ const StyledBadgeWithIcon = styled.span<{
   text-decoration: ${CaptionTextDecoration};
   text-transform: ${CaptionTextCase};
   gap: ${SpacingSpacing1};
-  
+
   &:hover {
     color: ${(props) => variantStyles[props.variant].hoverColor};
+  }
 `;
 
-const Badge: React.FC<BadgeWithIconProps> = ({
+const Badge: React.FC<BadgeProps> = ({
   variant = "light",
   children,
   showIcon = true,
