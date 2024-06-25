@@ -6,7 +6,6 @@ import {
   H1HeadingMainLineHeight,
   H1HeadingMainFontSize,
   H1HeadingMainLetterSpacing,
-  H1HeadingMainParagraphSpacing,
   H1HeadingMainTextDecoration,
   H1HeadingMainTextCase,
   H2HeadingMainFontFamily,
@@ -14,7 +13,6 @@ import {
   H2HeadingMainLineHeight,
   H2HeadingMainFontSize,
   H2HeadingMainLetterSpacing,
-  H2HeadingMainParagraphSpacing,
   H2HeadingMainTextDecoration,
   H2HeadingMainTextCase,
   H3HeadingMainFontFamily,
@@ -22,7 +20,6 @@ import {
   H3HeadingMainLineHeight,
   H3HeadingMainFontSize,
   H3HeadingMainLetterSpacing,
-  H3HeadingMainParagraphSpacing,
   H3HeadingMainTextDecoration,
   H3HeadingMainTextCase,
   H4HeadingMainFontFamily,
@@ -30,7 +27,6 @@ import {
   H4HeadingMainLineHeight,
   H4HeadingMainFontSize,
   H4HeadingMainLetterSpacing,
-  H4HeadingMainParagraphSpacing,
   H4HeadingMainTextDecoration,
   H4HeadingMainTextCase,
   H5HeadingMainFontFamily,
@@ -38,7 +34,6 @@ import {
   H5HeadingMainLineHeight,
   H5HeadingMainFontSize,
   H5HeadingMainLetterSpacing,
-  H5HeadingMainParagraphSpacing,
   H5HeadingMainTextDecoration,
   H5HeadingMainTextCase,
 } from "../../../tokens/js/variables";
@@ -56,7 +51,6 @@ const variantStyles = {
     lineHeight: H1HeadingMainLineHeight,
     fontSize: H1HeadingMainFontSize,
     letterSpacing: H1HeadingMainLetterSpacing,
-    marginBottom: H1HeadingMainParagraphSpacing,
     textDecoration: H1HeadingMainTextDecoration,
     textTransform: H1HeadingMainTextCase,
   },
@@ -66,7 +60,6 @@ const variantStyles = {
     lineHeight: H2HeadingMainLineHeight,
     fontSize: H2HeadingMainFontSize,
     letterSpacing: H2HeadingMainLetterSpacing,
-    marginBottom: H2HeadingMainParagraphSpacing,
     textDecoration: H2HeadingMainTextDecoration,
     textTransform: H2HeadingMainTextCase,
   },
@@ -76,7 +69,6 @@ const variantStyles = {
     lineHeight: H3HeadingMainLineHeight,
     fontSize: H3HeadingMainFontSize,
     letterSpacing: H3HeadingMainLetterSpacing,
-    marginBottom: H3HeadingMainParagraphSpacing,
     textDecoration: H3HeadingMainTextDecoration,
     textTransform: H3HeadingMainTextCase,
   },
@@ -86,7 +78,6 @@ const variantStyles = {
     lineHeight: H4HeadingMainLineHeight,
     fontSize: H4HeadingMainFontSize,
     letterSpacing: H4HeadingMainLetterSpacing,
-    marginBottom: H4HeadingMainParagraphSpacing,
     textDecoration: H4HeadingMainTextDecoration,
     textTransform: H4HeadingMainTextCase,
   },
@@ -96,7 +87,6 @@ const variantStyles = {
     lineHeight: H5HeadingMainLineHeight,
     fontSize: H5HeadingMainFontSize,
     letterSpacing: H5HeadingMainLetterSpacing,
-    marginBottom: H5HeadingMainParagraphSpacing,
     textDecoration: H5HeadingMainTextDecoration,
     textTransform: H5HeadingMainTextCase,
   },
@@ -110,7 +100,7 @@ const StyledHeading = styled.h1<{
   line-height: ${(props) => variantStyles[props.variant].lineHeight};
   font-size: ${(props) => variantStyles[props.variant].fontSize};
   letter-spacing: ${(props) => variantStyles[props.variant].letterSpacing};
-  margin-bottom: ${(props) => variantStyles[props.variant].marginBottom};
+  margin: 0;
   text-decoration: ${(props) => variantStyles[props.variant].textDecoration};
   text-transform: ${(props) => variantStyles[props.variant].textTransform};
 `;

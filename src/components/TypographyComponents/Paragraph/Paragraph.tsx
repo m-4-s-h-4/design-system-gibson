@@ -76,6 +76,7 @@ const StyledParagraph = styled.p<{
   margin-bottom: ${(props) => variantStyles[props.variant].marginBottom};
   text-decoration: ${(props) => variantStyles[props.variant].textDecoration};
   text-transform: ${(props) => variantStyles[props.variant].textTransform};
+  margin: 0;
 `;
 
 const Paragraph: React.FC<ParagraphProps> = ({ variant, children }) => {
