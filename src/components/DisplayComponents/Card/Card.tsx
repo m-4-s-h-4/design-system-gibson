@@ -15,6 +15,7 @@ import { Heading5 } from "../../TypographyComponents/Heading/Heading.stories";
 import iconMapping from "../../../assets/icons/iconMapping";
 import logosMapping from "../../../assets/logos/logosMapping";
 import IconOnlyButton from "../../FormComponents/Button/IconOnlyButton/IconOnlyButton";
+import Badge, { BadgeProps } from "../../TextContentComponents/Badge/Badge";
 
 const LogoBox = styled.div`
   background-color: ${TokensCardDefaultHoverBg};
@@ -28,7 +29,6 @@ const LogoBox = styled.div`
 const CardWrapper = styled.div`
   background-color: ${TokensCardDefaultBg};
   padding: ${SpacingSpacing3};
-  border: 1px solid ${TokensCardDefaultBorder};
   display: inline-block;
   width: 260px;
   box-sizing: border-box;
@@ -43,6 +43,7 @@ const CardWrapper = styled.div`
 `;
 
 const ImageContainer = styled(Box)`
+  position: relative;
   overflow: hidden;
   width: 100%;
   height: 480px;
@@ -55,12 +56,25 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
+const BadgeContainer = styled.div`
+  position: absolute;
+  top: ${SpacingSpacing1};
+  left: ${SpacingSpacing1};
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${SpacingSpacing1};
+`;
+
 export interface CardProps {
   imageSrc: string;
   icon1?: keyof typeof iconMapping;
   icon2?: keyof typeof iconMapping;
   showIcons?: boolean;
   logo?: keyof typeof logosMapping;
+  badges?: (BadgeProps & { showIcon: boolean })[];
+  numberOfBadges?: number;
+  price?: string;
+  aboutText?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -69,6 +83,10 @@ const Card: React.FC<CardProps> = ({
   icon2,
   showIcons = true,
   logo = "Furch",
+  badges = [],
+  numberOfBadges = 4,
+  price = "Gibson Custom Les Paul",
+  aboutText = "$9,999",
 }) => {
   const LogoComponent = logosMapping[logo];
 
@@ -76,7 +94,18 @@ const Card: React.FC<CardProps> = ({
     <CardWrapper>
       <Stack spacing={SpacingSpacing3}>
         <ImageContainer>
-          <Image src={imageSrc} alt="Gibson Custom Les Paul image" />
+          <BadgeContainer>
+            {badges.slice(0, numberOfBadges).map((badge, index) => (
+              <Badge
+                key={index}
+                variant={badge.variant}
+                showIcon={badge.showIcon}
+              >
+                {badge.children}
+              </Badge>
+            ))}
+          </BadgeContainer>
+          <Image src={imageSrc} alt="Guitar image" />
         </ImageContainer>
         <Box fullWidth>
           <Flex xAlign="space-between" yAlign="center">
@@ -98,9 +127,9 @@ const Card: React.FC<CardProps> = ({
         </Box>
         <Box fullWidth>
           <Stack spacing={SpacingSpacing1}>
-            <Paragraph variant="medium">Gibson Custom Les Paul</Paragraph>
+            <Paragraph variant="medium">{aboutText}</Paragraph>
             <Heading5 as="h5" variant="heading50">
-              $9,999
+              {price}
             </Heading5>
           </Stack>
         </Box>
