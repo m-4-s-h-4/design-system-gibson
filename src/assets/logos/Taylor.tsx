@@ -3,11 +3,11 @@ interface SvgSvgTaylorProps extends SVGProps<SVGSVGElement> {
   size?: string;
 }
 
-const SvgTaylor = ({ size = "1em", ...props }: SvgSvgTaylorProps) => (
+const Taylor = ({ ...props }: SvgSvgTaylorProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
+    width="34px"
+    height="26px"
     fill="none"
     viewBox="0 0 34 27"
     {...props}
@@ -22,4 +22,4 @@ const SvgTaylor = ({ size = "1em", ...props }: SvgSvgTaylorProps) => (
     />
   </svg>
 );
-export default SvgTaylor;
+export default Taylor;

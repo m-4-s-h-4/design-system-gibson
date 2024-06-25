@@ -3,11 +3,11 @@ interface SvgSvgGuildProps extends SVGProps<SVGSVGElement> {
   size?: string;
 }
 
-const SvgGuild = ({ size = "1em", ...props }: SvgSvgGuildProps) => (
+const Guild = ({ ...props }: SvgSvgGuildProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
+    width="18px"
+    height="30px"
     fill="none"
     viewBox="0 0 18 31"
     {...props}
@@ -18,4 +18,4 @@ const SvgGuild = ({ size = "1em", ...props }: SvgSvgGuildProps) => (
     />
   </svg>
 );
-export default SvgGuild;
+export default Guild;

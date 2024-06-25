@@ -3,11 +3,11 @@ interface SvgSvgGretschProps extends SVGProps<SVGSVGElement> {
   size?: string;
 }
 
-const SvgGretsch = ({ size = "1em", ...props }: SvgSvgGretschProps) => (
+const Gretsch = ({ ...props }: SvgSvgGretschProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
+    width="44px"
+    height="11px"
     fill="none"
     viewBox="0 0 44 11"
     {...props}
@@ -22,4 +22,4 @@ const SvgGretsch = ({ size = "1em", ...props }: SvgSvgGretschProps) => (
     />
   </svg>
 );
-export default SvgGretsch;
+export default Gretsch;

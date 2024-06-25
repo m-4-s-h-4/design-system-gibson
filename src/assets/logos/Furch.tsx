@@ -4,11 +4,11 @@ interface SvgSvgFurchProps extends SVGProps<SVGSVGElement> {
   size?: string;
 }
 
-const SvgFurch = ({ size = "1em", ...props }: SvgSvgFurchProps) => (
+const Furch = ({ ...props }: SvgSvgFurchProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
+    width="25px"
+    height="18px"
     fill="none"
     viewBox="0 0 26 19"
     {...props}
@@ -23,4 +23,4 @@ const SvgFurch = ({ size = "1em", ...props }: SvgSvgFurchProps) => (
     />
   </svg>
 );
-export default SvgFurch;
+export default Furch;
