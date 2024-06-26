@@ -9,13 +9,6 @@ import {
   TokensButtonDisabledText,
   SpacingSpacing3,
   SpacingSpacing11,
-  ButtonFontFamily,
-  ButtonFontWeight,
-  ButtonLineHeight,
-  ButtonFontSize,
-  ButtonLetterSpacing,
-  ButtonTextCase,
-  ButtonTextDecoration,
   FontSizeMediumIcon,
   SpacingSpacing2,
   SpacingSpacing0,
@@ -24,6 +17,7 @@ import {
 import { BaseButtonProps } from "../ButtonProps";
 import iconComponents from "../../../../assets/icons/iconMapping";
 import Flex from "../../../LayoutComponents/Flex/Flex";
+import Text from "../../../Primatives/Text/Text";
 
 export interface ButtonWithIconProps extends BaseButtonProps {
   iconType: keyof typeof iconComponents;
@@ -35,18 +29,15 @@ const StyledButtonWithIcon = styled.button<
 >`
   padding: ${SpacingSpacing3} ${SpacingSpacing11} ${SpacingSpacing3}
     ${SpacingSpacing10};
-  font-family: ${ButtonFontFamily};
-  font-weight: ${ButtonFontWeight};
-  line-height: ${ButtonLineHeight};
-  font-size: ${ButtonFontSize};
-  letter-spacing: ${ButtonLetterSpacing};
-  text-transform: ${ButtonTextCase};
-  text-decoration: ${ButtonTextDecoration};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   gap: ${SpacingSpacing2};
   border: ${(props) =>
     props.destructive
-      ? `2px solid ${props.disabled ? TokensButtonDisabledDefault : TokensButtonDestructiveDefault}`
+      ? `2px solid ${
+          props.disabled
+            ? TokensButtonDisabledDefault
+            : TokensButtonDestructiveDefault
+        }`
       : "none"};
   background-color: ${(props) =>
     props.disabled && props.destructive
@@ -81,9 +72,11 @@ const StyledButtonWithIcon = styled.button<
 
 const IconWrapper = styled.span`
   font-size: ${FontSizeMediumIcon};
+  display: flex;
+  align-items: center;
 `;
 
-const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
+const SecondaryWithIcon: React.FC<ButtonWithIconProps> = ({
   iconType,
   children,
   destructive,
@@ -94,7 +87,7 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
   return (
     <StyledButtonWithIcon {...props} destructive={destructive}>
       <Flex xAlign="center" yAlign="center" gap={SpacingSpacing0}>
-        {children}
+        <Text as="buttonLarge">{children}</Text>
         <IconWrapper>
           <IconComponent />
         </IconWrapper>
@@ -103,4 +96,4 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
   );
 };
 
-export default ButtonWithIcon;
+export default SecondaryWithIcon;

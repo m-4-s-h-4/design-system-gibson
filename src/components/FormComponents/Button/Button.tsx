@@ -1,55 +1,76 @@
 import React from "react";
-import SecondaryButton from "./SecondaryButton/SecondaryButton";
+import { BaseButtonProps } from "./ButtonProps";
+import iconMapping from "../../../assets/icons/iconMapping";
 import IconOnlyButton from "./IconOnlyButton/IconOnlyButton";
-import LinkButton from "./LinkButton/LinkButton";
+import PrimaryButton from "./PrimaryButton/PrimaryButton";
+import SecondaryButton from "./SecondaryButton/SecondaryButton";
 import PrimaryWithIcon from "./PrimaryWithIcon/PrimaryWithIcon";
 import SecondaryWithIcon from "./SecondaryWithIcon/SecondaryWithIcon";
-import iconComponents from "../../../assets/icons/iconMapping";
-import PrimaryButton from "./PrimaryButton/PrimaryButton";
+import LinkButton from "./LinkButton/LinkButton";
 
-type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "iconOnly"
-  | "link"
-  | "primaryWithIcon"
-  | "secondaryWithIcon";
-
-const variantMapping: Record<ButtonVariant, React.ComponentType<any>> = {
-  primary: PrimaryButton,
-  secondary: SecondaryButton,
-  iconOnly: IconOnlyButton,
-  link: LinkButton,
-  primaryWithIcon: PrimaryWithIcon,
-  secondaryWithIcon: SecondaryWithIcon,
-};
-
-export interface ButtonProps {
-  variant?: ButtonVariant;
-  children?: React.ReactNode;
-  onClick?: () => void;
-  disabled?: boolean;
-  icon?: boolean;
-  iconType?: keyof typeof iconComponents;
+interface ButtonProps extends BaseButtonProps {
+  variant:
+    | "primary"
+    | "secondary"
+    | "icon-only"
+    | "primary-with-icon"
+    | "secondary-with-icon"
+    | "link";
+  destructive?: boolean;
+  iconType?: keyof typeof iconMapping;
 }
 
 const Button: React.FC<ButtonProps> = ({
-  variant = "primary",
+  variant,
+  destructive = false,
+  iconType,
   children,
-  onClick,
-  disabled = false,
-  icon = false,
-  iconType = "Next",
+  ...props
 }) => {
-  const ButtonComponent = variantMapping[variant] || PrimaryButton;
-  const IconComponent = iconComponents[iconType];
-
-  return (
-    <ButtonComponent onClick={onClick} disabled={disabled} iconType={iconType}>
-      {children}
-      {icon && IconComponent && variant !== "iconOnly" && <IconComponent />}
-    </ButtonComponent>
-  );
+  switch (variant) {
+    case "icon-only":
+      return <IconOnlyButton iconType={iconType} {...props} />;
+    case "primary":
+      return (
+        <PrimaryButton destructive={destructive} {...props}>
+          {children}
+        </PrimaryButton>
+      );
+    case "secondary":
+      return (
+        <SecondaryButton destructive={destructive} {...props}>
+          {children}
+        </SecondaryButton>
+      );
+    case "primary-with-icon":
+      return (
+        <PrimaryWithIcon
+          iconType={iconType!}
+          destructive={destructive}
+          {...props}
+        >
+          {children}
+        </PrimaryWithIcon>
+      );
+    case "secondary-with-icon":
+      return (
+        <SecondaryWithIcon
+          iconType={iconType!}
+          destructive={destructive}
+          {...props}
+        >
+          {children}
+        </SecondaryWithIcon>
+      );
+    case "link":
+      return (
+        <LinkButton destructive={destructive} {...props}>
+          {children}
+        </LinkButton>
+      );
+    default:
+      return null;
+  }
 };
 
 export default Button;

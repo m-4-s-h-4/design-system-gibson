@@ -9,18 +9,12 @@ import {
   TokensButtonDisabledText,
   SpacingSpacing3,
   SpacingSpacing11,
-  ButtonFontFamily,
-  ButtonFontWeight,
-  ButtonLineHeight,
-  ButtonFontSize,
-  ButtonLetterSpacing,
-  ButtonTextCase,
-  ButtonTextDecoration,
   FontSizeMediumIcon,
   SpacingSpacing0,
   SpacingSpacing10,
 } from "../../../../tokens/js/variables";
 import { BaseButtonProps } from "../ButtonProps";
+import Text from "../../../Primatives/Text/Text";
 import iconComponents from "../../../../assets/icons/iconMapping";
 import Flex from "../../../LayoutComponents/Flex/Flex";
 
@@ -34,14 +28,6 @@ const StyledButtonWithIcon = styled.button<
 >`
   padding: ${SpacingSpacing3} ${SpacingSpacing11} ${SpacingSpacing3}
     ${SpacingSpacing10};
-
-  font-family: ${ButtonFontFamily};
-  font-weight: ${ButtonFontWeight};
-  line-height: ${ButtonLineHeight};
-  font-size: ${ButtonFontSize};
-  letter-spacing: ${ButtonLetterSpacing};
-  text-transform: ${ButtonTextCase};
-  text-decoration: ${ButtonTextDecoration};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   border: none;
   background-color: ${(props) =>
@@ -65,9 +51,11 @@ const StyledButtonWithIcon = styled.button<
 
 const IconWrapper = styled.span`
   font-size: ${FontSizeMediumIcon};
+  display: flex;
+  align-items: center;
 `;
 
-const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
+const PrimaryWithIcon: React.FC<ButtonWithIconProps> = ({
   iconType,
   children,
   destructive,
@@ -78,7 +66,7 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
   return (
     <StyledButtonWithIcon {...props} destructive={destructive}>
       <Flex xAlign="center" yAlign="center" gap={SpacingSpacing0}>
-        {children}
+        <Text as="buttonLarge">{children}</Text>
         <IconWrapper>
           <IconComponent />
         </IconWrapper>
@@ -87,4 +75,4 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
   );
 };
 
-export default ButtonWithIcon;
+export default PrimaryWithIcon;

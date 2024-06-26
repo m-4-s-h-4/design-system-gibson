@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import {
   TokensButtonLinkButtonDefault,
@@ -5,18 +6,22 @@ import {
   TokensButtonSecondaryHover,
   TokensButtonDestructiveDefault,
   TokensButtonDestructiveHover,
-  ButtonFontFamily,
-  ButtonFontWeight,
-  ButtonLineHeight,
-  ButtonFontSize,
-  ButtonLetterSpacing,
-  ButtonTextCase,
   TextDecorationUnderline,
   TextDecorationNone,
 } from "../../../../tokens/js/variables";
 import { BaseButtonProps } from "../ButtonProps";
+import Text from "../../../Primatives/Text/Text";
 
-const LinkButton = styled.button<BaseButtonProps & { destructive?: boolean }>`
+interface LinkButtonProps extends BaseButtonProps {
+  onClick?: () => void;
+  disabled?: boolean;
+  destructive?: boolean;
+}
+
+const StyledButton = styled.button<{
+  disabled?: boolean;
+  destructive?: boolean;
+}>`
   background-color: transparent;
   color: ${(props) =>
     props.disabled
@@ -25,15 +30,9 @@ const LinkButton = styled.button<BaseButtonProps & { destructive?: boolean }>`
         ? TokensButtonDestructiveDefault
         : TokensButtonLinkButtonDefault};
   padding: 0;
-  font-family: ${ButtonFontFamily};
-  font-weight: ${ButtonFontWeight};
-  line-height: ${ButtonLineHeight};
-  font-size: ${ButtonFontSize};
-  letter-spacing: ${ButtonLetterSpacing};
-  text-transform: ${ButtonTextCase};
   text-decoration: ${(props) =>
     props.destructive ? TextDecorationNone : TextDecorationUnderline};
-  text-decoration-thickness: ${() => "3px"};
+  text-decoration-thickness: 3px;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   border: none;
 
@@ -45,5 +44,30 @@ const LinkButton = styled.button<BaseButtonProps & { destructive?: boolean }>`
         : TokensButtonSecondaryHover)};
   }
 `;
+
+const LinkButton: React.FC<LinkButtonProps> = ({
+  onClick,
+  disabled = false,
+  destructive = false,
+  children,
+  ...props
+}) => {
+  const handleClick = () => {
+    if (onClick && !disabled) {
+      onClick();
+    }
+  };
+
+  return (
+    <StyledButton
+      onClick={handleClick}
+      disabled={disabled}
+      destructive={destructive}
+      {...props}
+    >
+      <Text as="buttonLarge">{children}</Text>
+    </StyledButton>
+  );
+};
 
 export default LinkButton;

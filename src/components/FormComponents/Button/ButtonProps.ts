@@ -1,3 +1,5 @@
+import iconMapping from "../../../assets/icons/iconMapping";
+
 export interface BaseButtonProps {
   variant?: string;
   children?: React.ReactNode;
@@ -6,5 +8,13 @@ export interface BaseButtonProps {
 }
 
 export interface ButtonProps extends BaseButtonProps {
-  iconType?: keyof typeof import("../../../assets/icons/iconMapping").default;
+  variant:
+    | "primary"
+    | "secondary"
+    | "icon-only"
+    | "primary-with-icon"
+    | "secondary-with-icon"
+    | "link";
+  destructive?: boolean;
+  iconType?: keyof typeof iconMapping;
 }
