@@ -80,6 +80,7 @@ import {
 
 const styles: Record<string, React.CSSProperties> = {
   h1: {
+    margin: 0,
     fontFamily: H1HeadingMainFontFamily,
     fontWeight: H1HeadingMainFontWeight,
     lineHeight: H1HeadingMainLineHeight,
@@ -90,6 +91,7 @@ const styles: Record<string, React.CSSProperties> = {
       H1HeadingMainTextCase as React.CSSProperties["textTransform"],
   },
   h2: {
+    margin: 0,
     fontFamily: H2HeadingMainFontFamily,
     fontWeight: H2HeadingMainFontWeight,
     lineHeight: H2HeadingMainLineHeight,
@@ -100,6 +102,7 @@ const styles: Record<string, React.CSSProperties> = {
       H2HeadingMainTextCase as React.CSSProperties["textTransform"],
   },
   h3: {
+    margin: 0,
     fontFamily: H3HeadingMainFontFamily,
     fontWeight: H3HeadingMainFontWeight,
     lineHeight: H3HeadingMainLineHeight,
@@ -110,6 +113,7 @@ const styles: Record<string, React.CSSProperties> = {
       H3HeadingMainTextCase as React.CSSProperties["textTransform"],
   },
   h4: {
+    margin: 0,
     fontFamily: H4HeadingMainFontFamily,
     fontWeight: H4HeadingMainFontWeight,
     lineHeight: H4HeadingMainLineHeight,
@@ -120,6 +124,7 @@ const styles: Record<string, React.CSSProperties> = {
       H4HeadingMainTextCase as React.CSSProperties["textTransform"],
   },
   h5: {
+    margin: 0,
     fontFamily: H5HeadingMainFontFamily,
     fontWeight: H5HeadingMainFontWeight,
     lineHeight: H5HeadingMainLineHeight,
@@ -130,6 +135,7 @@ const styles: Record<string, React.CSSProperties> = {
       H5HeadingMainTextCase as React.CSSProperties["textTransform"],
   },
   bodyLarge: {
+    margin: 0,
     fontFamily: BodyLargeFontFamily,
     fontWeight: BodyLargeFontWeight,
     lineHeight: BodyLargeLineHeight,
@@ -139,6 +145,7 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: BodyLargeTextCase as React.CSSProperties["textTransform"],
   },
   bodyMedium: {
+    margin: 0,
     fontFamily: BodyMediumFontFamily,
     fontWeight: BodyMediumFontWeight,
     lineHeight: BodyMediumLineHeight,
@@ -148,6 +155,7 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: BodyMediumTextCase as React.CSSProperties["textTransform"],
   },
   bodySmall: {
+    margin: 0,
     fontFamily: BodySmallFontFamily,
     fontWeight: BodySmallFontWeight,
     lineHeight: BodySmallLineHeight,
@@ -157,6 +165,7 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: BodySmallTextCase as React.CSSProperties["textTransform"],
   },
   caption: {
+    margin: 0,
     fontFamily: CaptionFontFamily,
     fontWeight: CaptionFontWeight,
     lineHeight: CaptionLineHeight,
@@ -166,6 +175,7 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: CaptionTextCase as React.CSSProperties["textTransform"],
   },
   buttonLarge: {
+    margin: 0,
     fontFamily: ButtonFontFamily,
     fontWeight: ButtonFontWeight,
     lineHeight: ButtonLineHeight,
@@ -175,6 +185,7 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: ButtonTextCase as React.CSSProperties["textTransform"],
   },
   buttonSmall: {
+    margin: 0,
     fontFamily: ButtonSmallFontFamily,
     fontWeight: ButtonSmallFontWeight,
     lineHeight: ButtonSmallLineHeight,

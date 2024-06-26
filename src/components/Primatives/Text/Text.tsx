@@ -44,7 +44,11 @@ const Text = <
       case "bodyMedium":
       case "bodySmall":
       case "caption":
-        return "div";
+        return type === "bodyLarge" ||
+          type === "bodyMedium" ||
+          type === "bodySmall"
+          ? "p"
+          : "div";
       default:
         return type || "p";
     }
