@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import Input, { InputProps } from "./Input";
 
 export default {
-  title: "Components/Input",
+  title: "Components/Form Components/Input",
   component: Input,
   argTypes: {
     placeholder: {
@@ -12,6 +12,10 @@ export default {
     error: {
       control: "boolean",
       defaultValue: false,
+    },
+    errorMessage: {
+      control: "text",
+      defaultValue: "Please enter a valid email.",
     },
     type: {
       control: {
@@ -56,10 +60,11 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: "Enter text here",
   error: false,
+  errorMessage: "Please enter a valid email.",
   type: "text",
   helpTextVariant: "default",
   helpTextChildren: "Please enter email connected to the account.",
-  label: "Label",
+  label: "Email",
   showLabel: true,
   showHelpText: true,
   required: false,
@@ -67,12 +72,13 @@ Default.args = {
 
 export const ErrorState = Template.bind({});
 ErrorState.args = {
-  placeholder: "Enter text here",
+  placeholder: "Enter your email",
   error: true,
+  errorMessage: "Please enter a valid email.",
   type: "text",
   helpTextVariant: "default",
-  helpTextChildren: "Please enter a valid email.",
-  label: "Label",
+  helpTextChildren: "Please enter email connected to the account.",
+  label: "Email",
   showLabel: true,
   showHelpText: true,
   required: true,
@@ -80,12 +86,13 @@ ErrorState.args = {
 
 export const WarningState = Template.bind({});
 WarningState.args = {
-  placeholder: "Enter text here",
+  placeholder: "Enter your email",
   error: false,
+  errorMessage: "Your email is already in the system.",
   type: "text",
   helpTextVariant: "warning",
-  helpTextChildren: "This is a warning message.",
-  label: "Label",
+  helpTextChildren: "Your email is already in the system.",
+  label: "Email",
   showLabel: true,
   showHelpText: true,
   required: true,
@@ -93,12 +100,13 @@ WarningState.args = {
 
 export const SuccessState = Template.bind({});
 SuccessState.args = {
-  placeholder: "Enter text here",
+  placeholder: "Enter your email",
   error: false,
+  errorMessage: "Your email was received.",
   type: "text",
   helpTextVariant: "success",
-  helpTextChildren: "This is a success message.",
-  label: "Label",
+  helpTextChildren: "Your email was received.",
+  label: "Email",
   showLabel: true,
   showHelpText: true,
   required: false,
@@ -108,10 +116,11 @@ export const NumberInput = Template.bind({});
 NumberInput.args = {
   placeholder: "Enter value here",
   error: false,
+  errorMessage: "Please enter a valid number.",
   type: "number",
   helpTextVariant: "default",
-  helpTextChildren: "Select input type from the dropdown.",
-  label: "Select Input Type",
+  helpTextChildren: "How many guitars would you like.",
+  label: "Enter number of guitars",
   showLabel: true,
   showHelpText: true,
   required: false,
