@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Text from "../../Primatives/Text/Text";
 import {
   TokensBadgeDarkBg,
   TokensBadgeLightBg,
@@ -18,14 +19,6 @@ import {
   TokensBadgeHooverTextWarning,
   SpacingSpacing1,
   SpacingSpacing2,
-  CaptionFontFamily,
-  CaptionFontWeight,
-  CaptionLineHeight,
-  CaptionFontSize,
-  CaptionLetterSpacing,
-  CaptionParagraphSpacing,
-  CaptionTextDecoration,
-  CaptionTextCase,
   FontSizeSmallIcon,
   TokensBadgeBrownBg,
   TokensBadgeHooverTextBrown,
@@ -34,7 +27,7 @@ import {
 import SuccessIcon from "../../../assets/icons/Success";
 import WarningIcon from "../../../assets/icons/Warning";
 import ErrorIcon from "../../../assets/icons/Error";
-import ClearIcon from "../../../assets/icons/Clear";
+import StarsIcon from "../../../assets/icons/Stars";
 
 export interface BadgeProps {
   variant?: "dark" | "light" | "brown" | "warning" | "success" | "error";
@@ -47,19 +40,19 @@ const variantStyles = {
     backgroundColor: TokensBadgeDarkBg,
     color: TokensBadgeTextDark,
     hoverColor: TokensBadgeHooverTextDark,
-    icon: <ClearIcon size={FontSizeSmallIcon} />,
+    icon: <StarsIcon size={FontSizeSmallIcon} />,
   },
   light: {
     backgroundColor: TokensBadgeLightBg,
     color: TokensBadgeTextLight,
     hoverColor: TokensBadgeHooverTextLight,
-    icon: <ClearIcon size={FontSizeSmallIcon} />,
+    icon: <StarsIcon size={FontSizeSmallIcon} />,
   },
   brown: {
     backgroundColor: TokensBadgeBrownBg,
     color: TokensBadgeTextBrown,
     hoverColor: TokensBadgeHooverTextBrown,
-    icon: <ClearIcon size={FontSizeSmallIcon} />,
+    icon: <StarsIcon size={FontSizeSmallIcon} />,
   },
   warning: {
     backgroundColor: TokensBadgeWarningBg,
@@ -89,14 +82,6 @@ const StyledBadgeWithIcon = styled.span<{
   padding: ${SpacingSpacing1} ${SpacingSpacing2};
   display: inline-flex;
   align-items: center;
-  font-family: ${CaptionFontFamily};
-  font-weight: ${CaptionFontWeight};
-  line-height: ${CaptionLineHeight};
-  font-size: ${CaptionFontSize};
-  letter-spacing: ${CaptionLetterSpacing};
-  margin-bottom: ${CaptionParagraphSpacing};
-  text-decoration: ${CaptionTextDecoration};
-  text-transform: ${CaptionTextCase};
   gap: ${SpacingSpacing1};
 
   &:hover {
@@ -113,7 +98,7 @@ const Badge: React.FC<BadgeProps> = ({
   return (
     <StyledBadgeWithIcon variant={variant}>
       {showIcon && icon}
-      {children}
+      <Text as="caption">{children}</Text>
     </StyledBadgeWithIcon>
   );
 };
