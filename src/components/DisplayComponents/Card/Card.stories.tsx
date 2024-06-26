@@ -5,7 +5,7 @@ import logosMapping from "../../../assets/logos/logosMapping";
 import { BadgeProps } from "../../TextContentComponents/Badge/Badge";
 
 export default {
-  title: "Components/Display Components/Card",
+  title: "Components/Display Components/Product Card",
   component: Card,
   argTypes: {
     icon1: {
