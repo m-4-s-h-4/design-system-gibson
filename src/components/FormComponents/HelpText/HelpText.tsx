@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Text from "../../Primatives/Text/Text";
+import Stack from "../../LayoutComponents/Stack/Stack";
 import {
-  CaptionFontWeight,
-  CaptionLineHeight,
-  CaptionFontSize,
-  CaptionLetterSpacing,
-  CaptionParagraphSpacing,
-  CaptionTextDecoration,
-  CaptionTextCase,
   TokensHelpTextDefaultDefault,
   TokensHelpTextSuccessDefault,
   TokensHelpTextWarningDefault,
@@ -31,33 +26,36 @@ const variantStyles = {
   },
   error: {
     color: TokensHelpTextErrorDefault,
-    icon: <ErrorIcon size={FontSizeSmallIcon} />,
+    icon: (
+      <ErrorIcon size={FontSizeSmallIcon} color={TokensHelpTextErrorDefault} />
+    ),
   },
   warning: {
     color: TokensHelpTextWarningDefault,
-    icon: <WarningIcon size={FontSizeSmallIcon} />,
+    icon: (
+      <WarningIcon
+        size={FontSizeSmallIcon}
+        color={TokensHelpTextWarningDefault}
+      />
+    ),
   },
   success: {
     color: TokensHelpTextSuccessDefault,
-    icon: <SuccessIcon size={FontSizeSmallIcon} />,
+    icon: (
+      <SuccessIcon
+        size={FontSizeSmallIcon}
+        color={TokensHelpTextSuccessDefault}
+      />
+    ),
   },
 };
 
-const StyledHelpText = styled.span<{
+interface StyledHelpTextProps {
   variant: "default" | "error" | "warning" | "success";
-}>`
-  font-family: Helvetica Neue;
-  font-weight: ${CaptionFontWeight};
-  line-height: ${CaptionLineHeight};
-  font-size: ${CaptionFontSize};
-  letter-spacing: ${CaptionLetterSpacing};
-  margin-bottom: ${CaptionParagraphSpacing};
-  text-decoration: ${CaptionTextDecoration};
-  text-transform: ${CaptionTextCase};
+}
+
+const StyledHelpText = styled.span<StyledHelpTextProps>`
   color: ${(props) => variantStyles[props.variant].color};
-  display: inline-flex;
-  align-items: center;
-  gap: ${SpacingSpacing1};
 `;
 
 const HelpText: React.FC<HelpTextProps> = ({
@@ -66,10 +64,15 @@ const HelpText: React.FC<HelpTextProps> = ({
 }) => {
   const icon = variantStyles[variant].icon;
   return (
-    <StyledHelpText variant={variant}>
-      {icon}
-      {children}
-    </StyledHelpText>
+    <Stack orientation="horizontal" spacing={SpacingSpacing1}>
+      {icon &&
+        React.cloneElement(icon, {
+          style: { color: variantStyles[variant].color },
+        })}
+      <StyledHelpText variant={variant}>
+        <Text as="caption">{children}</Text>
+      </StyledHelpText>
+    </Stack>
   );
 };
 
