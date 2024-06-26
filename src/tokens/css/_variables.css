@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 26 Jun 2024 09:22:57 GMT
+ * Generated on Wed, 26 Jun 2024 18:04:11 GMT
  */
 
 
@@ -45,6 +45,13 @@
   --tokens-help-text-success-default: var(--tokens-color-secondary-green-green);
   --tokens-help-text-warning-default: var(--tokens-color-secondary-yellow-yellow);
   --tokens-help-text-error-default: var(--tokens-color-secondary-red-red);
+  --tokens-callout-default-text: var(--tokens-color-grayscale-black-900);
+  --tokens-callout-success-text: var(--tokens-color-secondary-green-green-dark);
+  --tokens-callout-warning-text: var(--tokens-color-secondary-yellow-yellow);
+  --tokens-callout-error-text: var(--tokens-color-secondary-red-red);
+  --tokens-callout-special-text: var(--tokens-color-primary-blue-blue-700);
+  --tokens-callout-bg-color: var(--tokens-color-grayscale-white);
+  --tokens-callout-border-color: var(--tokens-color-grayscale-black-400);
   --tokens-label-required: var(--tokens-color-secondary-red-red);
   --tokens-input-background-default: var(--tokens-color-grayscale-black-100);
   --tokens-input-placeholder-default: var(--tokens-color-grayscale-black-500);

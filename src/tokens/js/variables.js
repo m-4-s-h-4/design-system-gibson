@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 26 Jun 2024 09:22:57 GMT
+ * Generated on Wed, 26 Jun 2024 18:04:11 GMT
  */
 
 
@@ -44,6 +44,13 @@ export const TokensHelpTextDefaultDefault = "#8c8c8c";
 export const TokensHelpTextSuccessDefault = "#42b983";
 export const TokensHelpTextWarningDefault = "#ffc10c";
 export const TokensHelpTextErrorDefault = "#ec2020";
+export const TokensCalloutDefaultText = "#1a1a1a";
+export const TokensCalloutSuccessText = "#127a4b";
+export const TokensCalloutWarningText = "#ffc10c";
+export const TokensCalloutErrorText = "#ec2020";
+export const TokensCalloutSpecialText = "#1379c1";
+export const TokensCalloutBgColor = "#ffffff";
+export const TokensCalloutBorderColor = "#d3d3d3";
 export const TokensLabelRequired = "#ec2020";
 export const TokensInputBackgroundDefault = "#f4f4f4";
 export const TokensInputPlaceholderDefault = "#bfbfbf";
