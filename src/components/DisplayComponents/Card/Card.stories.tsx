@@ -77,7 +77,7 @@ export const CardWithTwoIconsNoBadges = Template.bind({});
 CardWithTwoIconsNoBadges.args = {
   imageSrc:
     "https://files.ekmcdn.com/apollomusic/images/epiphone-inspired-by-gibson-custom-1959-les-paul-standard-factory-burst-4440-p.png",
-  aboutText: "Epiphone Les Paul Standard",
+  aboutText: "Epiphone Les Paul",
   price: "$1,299",
   icon1: "Cart",
   icon2: "Favourite",
@@ -91,7 +91,7 @@ export const CardWithNoIconsNoBadges = Template.bind({});
 CardWithNoIconsNoBadges.args = {
   imageSrc:
     "https://www.twintown.com/cdn/shop/files/Gibson_Les_Paul_Standard_50s_Figured_Top_Electric_Guitar_Translucent_Fuchsia_with_Case.png?v=1695829749",
-  aboutText: "Gibson Les Paul Standard",
+  aboutText: "Gibson Les Paul",
   price: "$8,499",
   icon1: undefined,
   icon2: undefined,
@@ -106,7 +106,7 @@ CardWithTwoIconsTwoBadges.args = {
   imageSrc:
     "https://files.ekmcdn.com/apollomusic/images/epiphone-inspired-by-gibson-custom-1959-les-paul-standard-factory-burst-4440-p.png",
 
-  aboutText: "Epiphone Les Paul Standard",
+  aboutText: "Epiphone Les Paul",
   price: "$1,299",
   icon1: "Cart",
   icon2: "Favourite",
@@ -123,7 +123,7 @@ export const CardWithNoIconsFourBadges = Template.bind({});
 CardWithNoIconsFourBadges.args = {
   imageSrc:
     "https://upload.wikimedia.org/wikipedia/commons/b/b8/Gibson_LP_Classic.png",
-  aboutText: "Gibson Les Paul Classic",
+  aboutText: "Gibson Les Paul",
   price: "$2,499",
   icon1: undefined,
   icon2: undefined,

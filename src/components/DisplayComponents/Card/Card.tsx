@@ -7,15 +7,14 @@ import {
   SpacingSpacing3,
   SpacingSpacing1,
 } from "../../../tokens/js/variables";
-import Box from "../../Box/Box";
+import Box from "../../Primatives/Box/Box";
 import Stack from "../../LayoutComponents/Stack/Stack";
 import Flex from "../../LayoutComponents/Flex/Flex";
-import Paragraph from "../../TypographyComponents/Paragraph/Paragraph";
-import { Heading5 } from "../../TypographyComponents/Heading/Heading.stories";
 import iconMapping from "../../../assets/icons/iconMapping";
 import logosMapping from "../../../assets/logos/logosMapping";
 import IconOnlyButton from "../../FormComponents/Button/IconOnlyButton/IconOnlyButton";
 import Badge, { BadgeProps } from "../../TextContentComponents/Badge/Badge";
+import Heading from "../../TypographyComponents/Heading/Heading";
 
 const LogoBox = styled.div`
   background-color: ${TokensCardDefaultHoverBg};
@@ -127,10 +126,8 @@ const Card: React.FC<CardProps> = ({
         </Box>
         <Box fullWidth>
           <Stack spacing={SpacingSpacing1}>
-            <Paragraph variant="medium">{aboutText}</Paragraph>
-            <Heading5 as="h5" variant="heading50">
-              {price}
-            </Heading5>
+            <Heading level="h5">{aboutText}</Heading>
+            <Heading level="h4">{price}</Heading>
           </Stack>
         </Box>
       </Stack>
