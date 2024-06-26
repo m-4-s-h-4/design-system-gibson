@@ -35,9 +35,6 @@ const LinkButton = styled.button<BaseButtonProps & { destructive?: boolean }>`
     props.destructive ? TextDecorationNone : TextDecorationUnderline};
   text-decoration-thickness: ${() => "3px"};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: none;
 
   &:hover {

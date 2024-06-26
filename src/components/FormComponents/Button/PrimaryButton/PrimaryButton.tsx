@@ -31,9 +31,6 @@ const PrimaryButton = styled.button<
   text-transform: ${ButtonTextCase};
   text-decoration: ${ButtonTextDecoration};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: none;
 
   background-color: ${(props) =>

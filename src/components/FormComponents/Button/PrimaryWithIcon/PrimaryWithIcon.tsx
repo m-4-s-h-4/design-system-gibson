@@ -18,6 +18,7 @@ import {
   ButtonTextDecoration,
   FontSizeMediumIcon,
   SpacingSpacing0,
+  SpacingSpacing10,
 } from "../../../../tokens/js/variables";
 import { BaseButtonProps } from "../ButtonProps";
 import iconComponents from "../../../../assets/icons/iconMapping";
@@ -31,7 +32,9 @@ export interface ButtonWithIconProps extends BaseButtonProps {
 const StyledButtonWithIcon = styled.button<
   BaseButtonProps & { destructive?: boolean }
 >`
-  padding: ${SpacingSpacing3} ${SpacingSpacing11};
+  padding: ${SpacingSpacing3} ${SpacingSpacing11} ${SpacingSpacing3}
+    ${SpacingSpacing10};
+
   font-family: ${ButtonFontFamily};
   font-weight: ${ButtonFontWeight};
   line-height: ${ButtonLineHeight};
@@ -40,9 +43,6 @@ const StyledButtonWithIcon = styled.button<
   text-transform: ${ButtonTextCase};
   text-decoration: ${ButtonTextDecoration};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: none;
   background-color: ${(props) =>
     props.disabled

@@ -32,9 +32,6 @@ const SecondaryButton = styled.button<
   text-transform: ${ButtonTextCase};
   text-decoration: ${ButtonTextDecoration};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: ${SpacingSpacing2};
   border: ${(props) =>
     props.destructive
