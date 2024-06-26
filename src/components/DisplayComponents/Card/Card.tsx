@@ -1,13 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import {
-  TokensCardDefaultBg,
-  TokensCardDefaultHoverBg,
-  TokensCardDefaultBorder,
-  SpacingSpacing3,
-  SpacingSpacing1,
-} from "../../../tokens/js/variables";
-import Box from "../../Primatives/Box/Box";
+import { SpacingSpacing3, SpacingSpacing1 } from "../../../tokens/js/variables";
 import Stack from "../../LayoutComponents/Stack/Stack";
 import Flex from "../../LayoutComponents/Flex/Flex";
 import iconMapping from "../../../assets/icons/iconMapping";
@@ -15,54 +7,14 @@ import logosMapping from "../../../assets/logos/logosMapping";
 import IconOnlyButton from "../../FormComponents/Button/IconOnlyButton/IconOnlyButton";
 import Badge, { BadgeProps } from "../../TextContentComponents/Badge/Badge";
 import Heading from "../../TypographyComponents/Heading/Heading";
-
-const LogoBox = styled.div`
-  background-color: ${TokensCardDefaultHoverBg};
-  width: 120px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const CardWrapper = styled.div`
-  background-color: ${TokensCardDefaultBg};
-  padding: ${SpacingSpacing3};
-  display: inline-block;
-  width: 260px;
-  box-sizing: border-box;
-
-  &:hover {
-    background-color: ${TokensCardDefaultHoverBg};
-  }
-
-  &:hover ${LogoBox} {
-    background-color: ${TokensCardDefaultBg};
-  }
-`;
-
-const ImageContainer = styled(Box)`
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 480px;
-  border: 1px solid ${TokensCardDefaultBorder};
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const BadgeContainer = styled.div`
-  position: absolute;
-  top: ${SpacingSpacing1};
-  left: ${SpacingSpacing1};
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${SpacingSpacing1};
-`;
+import {
+  LogoBox,
+  CardWrapper,
+  ImageContainer,
+  BadgeContainer,
+  Image,
+} from "./CardStyles";
+import Box from "../../Primatives/Box/Box";
 
 export interface CardProps {
   imageSrc: string;
