@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import Flex from "./Flex";
-import StyledBox from "../../Box/StyledBox";
+import StyledBox from "../StyledBox";
 
 export default {
   title: "Components/Layout Components/Flex Layout",
