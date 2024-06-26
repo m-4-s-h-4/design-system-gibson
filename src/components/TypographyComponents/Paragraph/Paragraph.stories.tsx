@@ -8,37 +8,42 @@ export default {
     variant: {
       control: {
         type: "select",
-        options: ["large", "medium", "small"],
+        options: ["bodyLarge", "bodyMedium", "bodySmall"],
       },
-      defaultValue: "medium",
+      defaultValue: "bodyMedium",
     },
     children: {
       control: "text",
       defaultValue:
-        "Guitars have played pivotal roles in some of the most iconic gigs in music history. One such moment was Jimi Hendrix's legendary performance at Woodstock in 1969, where his electric rendition of The Star-Spangled Banner captivated the audience and became an emblem of the era. ",
+        "Jeff Beck is considered one of the best guitarists in history, capable of playing virtually anything in his own unique, soulful style. Jeff Beck got his start playing in the Yardbirds, making groundbreaking music on a ’59 Les Paul Standard. The “YardBurst” is a faithful recreation of this legendary guitar, complete with its unique and instantly identifiable traits, such as the classic white bobbin humbuckers and black single-ply pickguard. An aged Lifton™ hardshell case and a selection of case candy commemorating the life of the legend that is Jeff Beck are also included.",
+    },
+    style: {
+      table: {
+        disable: true,
+      },
     },
   },
-} as Meta;
+} as Meta<ParagraphProps>;
 
 const Template: StoryFn<ParagraphProps> = (args) => <Paragraph {...args} />;
 
-export const Large = Template.bind({});
-Large.args = {
-  variant: "large",
+export const BodyLarge = Template.bind({});
+BodyLarge.args = {
+  variant: "bodyLarge",
   children:
-    "Guitars have played pivotal roles in some of the most iconic gigs in music history. One such moment was Jimi Hendrix's legendary performance at Woodstock in 1969, where his electric rendition of The Star-Spangled Banner captivated the audience and became an emblem of the era. ",
+    "Jeff Beck is considered one of the best guitarists in history, capable of playing virtually anything in his own unique, soulful style. Jeff Beck got his start playing in the Yardbirds, making groundbreaking music on a ’59 Les Paul Standard. The “YardBurst” is a faithful recreation of this legendary guitar, complete with its unique and instantly identifiable traits, such as the classic white bobbin humbuckers and black single-ply pickguard. An aged Lifton™ hardshell case and a selection of case candy commemorating the life of the legend that is Jeff Beck are also included.",
 };
 
-export const Medium = Template.bind({});
-Medium.args = {
-  variant: "medium",
+export const BodyMedium = Template.bind({});
+BodyMedium.args = {
+  variant: "bodyMedium",
   children:
-    "Guitars have played pivotal roles in some of the most iconic gigs in music history. One such moment was Jimi Hendrix's legendary performance at Woodstock in 1969, where his electric rendition of The Star-Spangled Banner captivated the audience and became an emblem of the era. ",
+    "Jeff Beck is considered one of the best guitarists in history, capable of playing virtually anything in his own unique, soulful style. Jeff Beck got his start playing in the Yardbirds, making groundbreaking music on a ’59 Les Paul Standard. The “YardBurst” is a faithful recreation of this legendary guitar, complete with its unique and instantly identifiable traits, such as the classic white bobbin humbuckers and black single-ply pickguard. An aged Lifton™ hardshell case and a selection of case candy commemorating the life of the legend that is Jeff Beck are also included.",
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  variant: "small",
+export const BodySmall = Template.bind({});
+BodySmall.args = {
+  variant: "bodySmall",
   children:
-    "Guitars have played pivotal roles in some of the most iconic gigs in music history. One such moment was Jimi Hendrix's legendary performance at Woodstock in 1969, where his electric rendition of The Star-Spangled Banner captivated the audience and became an emblem of the era. ",
+    "Jeff Beck is considered one of the best guitarists in history, capable of playing virtually anything in his own unique, soulful style. Jeff Beck got his start playing in the Yardbirds, making groundbreaking music on a ’59 Les Paul Standard. The “YardBurst” is a faithful recreation of this legendary guitar, complete with its unique and instantly identifiable traits, such as the classic white bobbin humbuckers and black single-ply pickguard. An aged Lifton™ hardshell case and a selection of case candy commemorating the life of the legend that is Jeff Beck are also included.",
 };
