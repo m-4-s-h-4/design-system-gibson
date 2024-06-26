@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 25 Jun 2024 12:16:35 GMT
+ * Generated on Wed, 26 Jun 2024 09:22:57 GMT
  */
 
 
@@ -44,6 +44,12 @@ export const TokensHelpTextDefaultDefault = "#8c8c8c";
 export const TokensHelpTextSuccessDefault = "#42b983";
 export const TokensHelpTextWarningDefault = "#ffc10c";
 export const TokensHelpTextErrorDefault = "#ec2020";
+export const TokensLabelRequired = "#ec2020";
+export const TokensInputBackgroundDefault = "#f4f4f4";
+export const TokensInputPlaceholderDefault = "#bfbfbf";
+export const TokensInputPlaceholderHover = "#8c8c8c";
+export const TokensInputPlaceholderText = "#1a1a1a";
+export const TokensInputPlaceholderError = "#ec2020";
 export const TokensButtonPrimaryDefault = "#8f8362";
 export const TokensButtonPrimaryHover = "#665a3b";
 export const TokensButtonPrimaryText = "#ffffff";
