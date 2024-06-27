@@ -19,6 +19,7 @@ const HeaderBox = styled(Box)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 `;
 
 const Header: React.FC = () => {
