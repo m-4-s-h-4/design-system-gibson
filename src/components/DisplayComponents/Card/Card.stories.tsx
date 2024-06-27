@@ -4,7 +4,7 @@ import iconMapping from "../../../assets/icons/iconMapping";
 import logosMapping from "../../../assets/logos/logosMapping";
 import { BadgeProps } from "../../TextContentComponents/Badge/Badge";
 
-export default {
+const meta: Meta<typeof Card> = {
   title: "Components/Display Components/Product Card",
   component: Card,
   argTypes: {
@@ -63,7 +63,10 @@ export default {
       defaultValue: "$9,999",
     },
   },
-} as Meta;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<
   CardProps & {
@@ -105,7 +108,6 @@ export const CardWithTwoIconsTwoBadges = Template.bind({});
 CardWithTwoIconsTwoBadges.args = {
   imageSrc:
     "https://files.ekmcdn.com/apollomusic/images/epiphone-inspired-by-gibson-custom-1959-les-paul-standard-factory-burst-4440-p.png",
-
   aboutText: "Epiphone Les Paul",
   price: "$1,299",
   icon1: "Cart",

@@ -65,9 +65,25 @@ const getIcon = (variant: CalloutProps["variant"]) => {
   }
 };
 
+/**
+ * Props for the Callout component.
+ */
 export interface CalloutProps {
+  /**
+   * The variant of the callout.
+   * Can be 'default', 'success', 'warning', 'error', or 'special'.
+   * @default "default"
+   */
   variant?: "default" | "success" | "warning" | "error" | "special";
+
+  /**
+   * The heading text of the callout.
+   */
   heading: string;
+
+  /**
+   * The main text content of the callout.
+   */
   text: string;
 }
 

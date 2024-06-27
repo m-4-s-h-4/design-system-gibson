@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react";
 import Paragraph, { ParagraphProps } from "./Paragraph";
 
-export default {
+const meta: Meta<ParagraphProps> = {
   title: "Components/Typography components/Paragraph",
   component: Paragraph,
   argTypes: {
@@ -23,7 +23,10 @@ export default {
       },
     },
   },
-} as Meta<ParagraphProps>;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<ParagraphProps> = (args) => <Paragraph {...args} />;
 

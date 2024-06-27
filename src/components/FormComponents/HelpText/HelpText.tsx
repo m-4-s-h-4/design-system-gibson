@@ -10,8 +10,20 @@ import WarningIcon from "../../../assets/icons/Warning";
 import ErrorIcon from "../../../assets/icons/Error";
 import { variantStyles, StyledHelpText } from "./HelpTextStyles";
 
+/**
+ * Props for the HelpText component.
+ */
 export interface HelpTextProps {
+  /**
+   * The variant of the help text.
+   * Can be 'default', 'error', 'warning', or 'success'.
+   * @default "default"
+   */
   variant?: "default" | "error" | "warning" | "success";
+
+  /**
+   * The content of the help text.
+   */
   children: React.ReactNode;
 }
 

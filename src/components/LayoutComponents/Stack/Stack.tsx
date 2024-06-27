@@ -1,12 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import Box from "../../Primatives/Box/Box";
 
+/**
+ * Props for the Stack component.
+ */
 export interface StackProps {
+  /**
+   * The orientation of the stack.
+   * Determines if the items are arranged vertically or horizontally.
+   * @default "vertical"
+   */
   orientation?: "vertical" | "horizontal";
+
+  /**
+   * The spacing between the items in the stack.
+   * Can be any valid CSS size value .
+   */
   spacing?: string;
 }
 
-const StackWrapper = styled.div<StackProps>`
+const StackWrapper = styled(Box)<StackProps>`
   display: flex;
   flex-direction: ${(props) =>
     props.orientation === "horizontal" ? "row" : "column"};

@@ -28,10 +28,21 @@ import SuccessIcon from "../../../assets/icons/Success";
 import WarningIcon from "../../../assets/icons/Warning";
 import ErrorIcon from "../../../assets/icons/Error";
 import StarsIcon from "../../../assets/icons/Stars";
-
 export interface BadgeProps {
+  /**
+   * The variant of the badge.
+   * Can be one of 'dark', 'light', 'brown', 'warning', 'success', or 'error'.
+   */
   variant?: "dark" | "light" | "brown" | "warning" | "success" | "error";
+
+  /**
+   * The content of the badge.
+   */
   children: React.ReactNode;
+
+  /**
+   * Whether to show an icon alongside the badge content.
+   */
   showIcon?: boolean;
 }
 

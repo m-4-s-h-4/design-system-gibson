@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react";
 import BadgeWithIcon, { BadgeProps } from "./Badge";
 
-export default {
+const meta: Meta<BadgeProps> = {
   title: "Components/Text content components/Badge",
   component: BadgeWithIcon,
   argTypes: {
@@ -23,8 +23,10 @@ export default {
       defaultValue: true,
     },
   },
-} as Meta;
+  tags: ["autodocs"],
+};
 
+export default meta;
 const Template: StoryFn<BadgeProps> = (args) => <BadgeWithIcon {...args} />;
 
 export const Dark = Template.bind({});

@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react";
 import Input, { InputProps } from "./Input";
 
-export default {
+const meta: Meta<InputProps> = {
   title: "Components/Form Components/Input",
   component: Input,
   argTypes: {
@@ -52,7 +52,10 @@ export default {
       defaultValue: false,
     },
   },
-} as Meta;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<InputProps> = (args) => <Input {...args} />;
 

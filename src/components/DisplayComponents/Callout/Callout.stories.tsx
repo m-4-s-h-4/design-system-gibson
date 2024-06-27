@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react";
 import Callout, { CalloutProps } from "./Callout";
 
-export default {
+const meta: Meta<CalloutProps> = {
   title: "Components/Display Components/Callout",
   component: Callout,
   argTypes: {
@@ -22,7 +22,10 @@ export default {
         "Discover the legendary Gibson guitars that have shaped the sound of generations.",
     },
   },
-} as Meta;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<CalloutProps> = (args) => <Callout {...args} />;
 

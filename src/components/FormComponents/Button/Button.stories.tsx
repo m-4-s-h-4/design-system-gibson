@@ -3,7 +3,7 @@ import { ButtonProps } from "./ButtonProps";
 import iconMapping from "../../../assets/icons/iconMapping";
 import Button from "./Button";
 
-export default {
+const meta: Meta<ButtonProps> = {
   title: "Components/Form components/Button/Button Main",
   component: Button,
   argTypes: {
@@ -35,16 +35,12 @@ export default {
       control: "text",
     },
   },
-} as Meta;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  variant: "primary",
-  iconType: "Next",
-  children: "Button Text",
-};
 
 export const Primary = Template.bind({});
 Primary.args = {

@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "@storybook/addon-docs",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
   ],
@@ -13,5 +14,9 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
+  docs: {
+    defaultName: "Documentation",
+  },
 };
+
 export default config;

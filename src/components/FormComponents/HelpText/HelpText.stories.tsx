@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react";
 import HelpText, { HelpTextProps } from "./HelpText";
 
-export default {
+const meta: Meta<HelpTextProps> = {
   title: "Components/Form components/Help Text",
   component: HelpText,
   argTypes: {
@@ -17,7 +17,10 @@ export default {
       defaultValue: "This is a help text.",
     },
   },
-} as Meta;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<HelpTextProps> = (args) => <HelpText {...args} />;
 

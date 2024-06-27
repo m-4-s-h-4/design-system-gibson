@@ -3,8 +3,21 @@ import Text from "../../Primatives/Text/Text";
 import styles from "../../Primatives/Text/styles";
 
 export type ListProps = {
+  /**
+   * The type of the list.
+   * Can be 'ordered' or 'unordered'.
+   */
   type: "ordered" | "unordered";
+
+  /**
+   * The items to display in the list.
+   */
   items: string[];
+
+  /**
+   * The text style for the list items.
+   * Can be 'bodyLarge', 'bodyMedium', or 'bodySmall'.
+   */
   textStyle: "bodyLarge" | "bodyMedium" | "bodySmall";
   style?: React.CSSProperties;
 };

@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react";
 import List, { ListProps } from "./List";
 
-export default {
+const meta: Meta<ListProps> = {
   title: "Components/ Text content components/List",
   component: List,
   argTypes: {
@@ -26,7 +26,10 @@ export default {
       control: false,
     },
   },
-} as Meta<typeof List>;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<ListProps> = (args) => <List {...args} />;
 

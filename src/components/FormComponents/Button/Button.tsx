@@ -9,6 +9,10 @@ import SecondaryWithIcon from "./SecondaryWithIcon/SecondaryWithIcon";
 import LinkButton from "./LinkButton/LinkButton";
 
 interface ButtonProps extends BaseButtonProps {
+  /**
+   * The variant of the button.
+   * Can be one of 'primary', 'secondary', 'icon-only', 'primary-with-icon', 'secondary-with-icon', or 'link'.
+   */
   variant:
     | "primary"
     | "secondary"
@@ -16,14 +20,23 @@ interface ButtonProps extends BaseButtonProps {
     | "primary-with-icon"
     | "secondary-with-icon"
     | "link";
+
+  /**
+   * Determines if the button is destructive.
+   */
   destructive?: boolean;
+
+  /**
+   * The type of icon to display. Only applicable for 'icon-only', 'primary-with-icon', and 'secondary-with-icon' variants.
+   */
   iconType?: keyof typeof iconMapping;
 }
 
+const DEFAULT_ICON = "Next";
 const Button: React.FC<ButtonProps> = ({
   variant,
   destructive = false,
-  iconType,
+  iconType = DEFAULT_ICON,
   children,
   ...props
 }) => {
@@ -45,7 +58,7 @@ const Button: React.FC<ButtonProps> = ({
     case "primary-with-icon":
       return (
         <PrimaryWithIcon
-          iconType={iconType!}
+          iconType={iconType}
           destructive={destructive}
           {...props}
         >
@@ -55,7 +68,7 @@ const Button: React.FC<ButtonProps> = ({
     case "secondary-with-icon":
       return (
         <SecondaryWithIcon
-          iconType={iconType!}
+          iconType={iconType}
           destructive={destructive}
           {...props}
         >

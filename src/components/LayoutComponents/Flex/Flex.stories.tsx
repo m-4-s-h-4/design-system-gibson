@@ -1,8 +1,8 @@
 import { Meta, StoryFn } from "@storybook/react";
-import Flex from "./Flex";
+import Flex, { FlexProps } from "./Flex";
 import StyledBox from "../StyledBox";
 
-export default {
+const meta: Meta<FlexProps> = {
   title: "Components/Layout Components/Flex Layout",
   component: Flex,
   argTypes: {
@@ -45,7 +45,10 @@ export default {
       },
     },
   },
-} as Meta;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn = (args) => (
   <Flex {...args}>

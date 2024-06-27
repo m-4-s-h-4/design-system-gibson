@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react";
 import Heading, { HeadingProps } from "./Heading";
 
-export default {
+const meta: Meta<HeadingProps> = {
   title: "Components/Typography components/Heading",
   component: Heading,
   argTypes: {
@@ -22,7 +22,10 @@ export default {
       },
     },
   },
-} as Meta<HeadingProps>;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<HeadingProps> = (args) => <Heading {...args} />;
 

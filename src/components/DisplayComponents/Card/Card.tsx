@@ -16,15 +16,59 @@ import {
 } from "./CardStyles";
 import Box from "../../Primatives/Box/Box";
 
+/**
+ * Props for the Card component.
+ */
 export interface CardProps {
+  /**
+   * The source URL of the image to display in the card.
+   */
   imageSrc: string;
+
+  /**
+   * The type of the first icon to display.
+   * Can be any key from the iconMapping object.
+   */
   icon1?: keyof typeof iconMapping;
+
+  /**
+   * The type of the second icon to display.
+   * Can be any key from the iconMapping object.
+   */
   icon2?: keyof typeof iconMapping;
+
+  /**
+   * Determines whether to show icons.
+   * @default false
+   */
   showIcons?: boolean;
+
+  /**
+   * The logo to display on the card.
+   * Can be any key from the logosMapping object.
+   */
   logo?: keyof typeof logosMapping;
+
+  /**
+   * The badges to display on the card.
+   * Each badge should include a variant and a showIcon property.
+   */
   badges?: (BadgeProps & { showIcon: boolean })[];
+
+  /**
+   * The number of badges to display.
+   * @default 0
+   */
   numberOfBadges?: number;
+
+  /**
+   * The price text to display on the card.
+   */
   price?: string;
+
+  /**
+   * The about text to display on the card.
+   */
   aboutText?: string;
 }
 

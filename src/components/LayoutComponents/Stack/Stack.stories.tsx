@@ -2,7 +2,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import Stack, { StackProps } from "./Stack";
 import StyledBox from "../StyledBox";
 
-export default {
+const meta: Meta<StackProps> = {
   title: "Components/Layout Components/Stack Layout",
   component: Stack,
   argTypes: {
@@ -18,7 +18,10 @@ export default {
       },
     },
   },
-} as Meta;
+  tags: ["autodocs"],
+};
+
+export default meta;
 
 const Template: StoryFn<StackProps> = (args) => (
   <Stack {...args}>
