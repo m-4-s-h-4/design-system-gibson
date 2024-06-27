@@ -18,8 +18,8 @@ import {
   BodyMediumTextCase,
 } from "../../../../tokens/js/variables";
 
-const StyledInput = styled.input<{ isError: boolean }>`
-  width: 320px;
+const StyledInput = styled.input<{ isError: boolean; fullWidth: boolean }>`
+  width: ${(props) => (props.fullWidth ? "100%" : "320px")};
   padding: ${SpacingSpacing2} ${SpacingSpacing11} ${SpacingSpacing2}
     ${SpacingSpacing3};
   background-color: ${TokensInputBackgroundDefault};

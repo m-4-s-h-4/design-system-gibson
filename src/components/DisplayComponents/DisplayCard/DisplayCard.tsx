@@ -12,9 +12,9 @@ import Heading from "../../TypographyComponents/Heading/Heading";
 import Paragraph from "../../TypographyComponents/Paragraph/Paragraph";
 
 const DisplayCardBox = styled(Box)`
-  padding: ${SpacingSpacing6};
   padding-right: ${SpacingSpacing11};
   width: 320px;
+  box-sizing: border-box;
 `;
 
 const Image = styled.img`
@@ -35,15 +35,27 @@ export interface DisplayCardProps {
   text: string;
 
   /**
+   * The second text content of the card.
+   */
+  secondText?: string;
+
+  /**
    * The image source URL.
    */
   imageSrc: string;
+
+  /**
+   * Number of paragraphs in the card.
+   */
+  paragraphs?: number;
 }
 
 const DisplayCard: React.FC<DisplayCardProps> = ({
   heading,
   text,
+  secondText,
   imageSrc,
+  paragraphs = 1,
 }) => {
   const textColor = TokensBaseCardDefaultText;
 
@@ -56,6 +68,11 @@ const DisplayCard: React.FC<DisplayCardProps> = ({
         <Paragraph variant="bodyMedium" style={{ color: textColor }}>
           {text}
         </Paragraph>
+        {paragraphs > 1 && secondText && (
+          <Paragraph variant="bodyMedium" style={{ color: textColor }}>
+            {secondText}
+          </Paragraph>
+        )}
         <Image src={imageSrc} alt={heading} />
       </Stack>
     </DisplayCardBox>

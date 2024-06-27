@@ -19,6 +19,7 @@ const CardBox = styled(Box)`
   padding: ${SpacingSpacing6};
   background-color: ${TokensBaseCardBgColor};
   width: 320px;
+  box-sizing: border-box;
 `;
 
 const StyledButton = styled(Button)`

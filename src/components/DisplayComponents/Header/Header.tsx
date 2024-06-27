@@ -22,11 +22,19 @@ const HeaderBox = styled(Box)`
   box-sizing: border-box;
 `;
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onMenuClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   return (
     <HeaderBox>
-      <Gibson size="63px" color={TokensHeaderDefaultText} />
-      <IconOnlyButton iconType="Menu" color={TokensHeaderDefaultText} />
+      <Gibson color={TokensHeaderDefaultText} />
+      <IconOnlyButton
+        iconType="Menu"
+        color={TokensHeaderDefaultText}
+        onClick={onMenuClick}
+      />
     </HeaderBox>
   );
 };

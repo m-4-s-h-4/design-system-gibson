@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 import {
   TokensCalloutBgColor,
   TokensCalloutBorderColor,
@@ -24,11 +23,12 @@ import ErrorIcon from "../../../assets/icons/Error";
 import StarsIcon from "../../../assets/icons/Stars";
 import InfoIcon from "../../../assets/icons/Info";
 
-const CalloutBox = styled(Box)`
+const CalloutBox = styled(Box)<{ fullWidth?: boolean }>`
   border: 1px solid ${TokensCalloutBorderColor};
   padding: ${SpacingSpacing6};
   background-color: ${TokensCalloutBgColor};
-  width: 320px;
+  width: ${(props) => (props.fullWidth ? "100%" : "320px")};
+  box-sizing: border-box;
 `;
 
 const IconWrapper = styled(Box)`
@@ -85,18 +85,25 @@ export interface CalloutProps {
    * The main text content of the callout.
    */
   text: string;
+
+  /**
+   * Whether the callout should be full width.
+   * @default false
+   */
+  fullWidth?: boolean;
 }
 
 const Callout: React.FC<CalloutProps> = ({
   variant = "default",
   heading,
   text,
+  fullWidth = false,
 }) => {
   const textColor = getTextColor(variant);
   const Icon = getIcon(variant);
 
   return (
-    <CalloutBox>
+    <CalloutBox fullWidth={fullWidth}>
       <Stack orientation="horizontal" spacing={SpacingSpacing3}>
         <IconWrapper style={{ color: textColor }}>{Icon}</IconWrapper>
         <Stack orientation="vertical" spacing={SpacingSpacing2}>

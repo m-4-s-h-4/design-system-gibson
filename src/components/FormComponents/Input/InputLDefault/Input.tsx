@@ -66,6 +66,12 @@ export interface InputProps {
    * @default false
    */
   required?: boolean;
+
+  /**
+   * Indicates whether the input field should be full width.
+   * @default false
+   */
+  fullWidth?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -79,6 +85,7 @@ const Input: React.FC<InputProps> = ({
   showLabel = true,
   showHelpText = true,
   required = false,
+  fullWidth = false,
 }) => {
   return (
     <Stack spacing={SpacingSpacing1}>
@@ -88,6 +95,7 @@ const Input: React.FC<InputProps> = ({
         aria-invalid={error}
         isError={error}
         type={type}
+        fullWidth={fullWidth}
       />
       {showHelpText && (
         <HelpText variant={error ? "error" : helpTextVariant}>
