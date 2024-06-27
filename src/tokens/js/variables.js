@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 27 Jun 2024 11:11:29 GMT
+ * Generated on Thu, 27 Jun 2024 16:08:54 GMT
  */
 
 
@@ -125,7 +125,7 @@ export const LineHeights6 = "20px";
 export const LineHeights7 = "16px";
 export const LineHeights8 = "14px";
 export const FontWeightsFontWeightMedium = "700";
-export const FontWeightsFontWeightRegular = "500";
+export const FontWeightsFontWeightRegular = "400";
 export const FontSize0 = "12px";
 export const FontSize1 = "14px";
 export const FontSize2 = "16px";

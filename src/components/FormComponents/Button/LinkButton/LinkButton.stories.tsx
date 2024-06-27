@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import LinkButton from "./LinkButton";
-import { ButtonProps } from "../Button";
+import { ButtonProps } from "../ButtonProps";
 
 export default {
   title: "Components/Form components/Button/Link Button",

@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import PrimaryButton from "./PrimaryButton";
-import { ButtonProps } from "../Button";
+import { ButtonProps } from "../ButtonProps";
 
 export default {
   title: "Components/Form components/Button/Primary Button/Primary Button",
