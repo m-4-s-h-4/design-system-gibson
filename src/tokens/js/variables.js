@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 26 Jun 2024 18:04:11 GMT
+ * Generated on Thu, 27 Jun 2024 11:11:29 GMT
  */
 
 
@@ -51,6 +51,11 @@ export const TokensCalloutErrorText = "#ec2020";
 export const TokensCalloutSpecialText = "#1379c1";
 export const TokensCalloutBgColor = "#ffffff";
 export const TokensCalloutBorderColor = "#d3d3d3";
+export const TokensBaseCardDefaultText = "#1a1a1a";
+export const TokensBaseCardBgColor = "#ffffff";
+export const TokensBaseCardBorderColor = "#d3d3d3";
+export const TokensHeaderDefaultText = "#ffffff";
+export const TokensHeaderBgColor = "#8f8362";
 export const TokensLabelRequired = "#ec2020";
 export const TokensInputBackgroundDefault = "#f4f4f4";
 export const TokensInputPlaceholderDefault = "#bfbfbf";
@@ -87,10 +92,10 @@ export const TokensBadgeHooverTextBrown = "#c3b59b";
 export const TokensBadgeHooverTextError = "#ec2020";
 export const TokensBadgeHooverTextSuccess = "#42b983";
 export const TokensBadgeHooverTextWarning = "#ffc10c";
-export const TokensCardDefaultBg = "#ffffff";
-export const TokensCardDefaultHoverBg = "#f4f4f4";
-export const TokensCardDefaultBorder = "#e6e6e6";
-export const TokensCardDefaultText = "#1a1a1a";
+export const TokensCardProductDefaultBg = "#ffffff";
+export const TokensCardProductDefaultHoverBg = "#f4f4f4";
+export const TokensCardProductDefaultBorder = "#e6e6e6";
+export const TokensCardProductDefaultText = "#1a1a1a";
 export const SpacingSpacing1 = "0.25rem";
 export const SpacingSpacing2 = "0.5rem";
 export const SpacingSpacing3 = "0.75rem";

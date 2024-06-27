@@ -11,18 +11,19 @@ interface IconOnlyButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   iconType?: keyof typeof iconMapping;
+  color?: string;
 }
 
-const StyledButton = styled.button<{ disabled?: boolean }>`
+const StyledButton = styled.button<{ disabled?: boolean; color?: string }>`
   background-color: transparent;
-  color: ${TokensIconPrimaryColor};
+  color: ${(props) => props.color || TokensIconPrimaryColor};
   padding: 0;
   font-size: ${FontSizeMediumIcon};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   border: none;
 
   &:hover {
-    color: ${TokensIconPrimaryColor};
+    color: ${(props) => props.color || TokensIconPrimaryColor};
   }
 
   &:disabled {
@@ -33,7 +34,8 @@ const StyledButton = styled.button<{ disabled?: boolean }>`
 const IconOnlyButton: React.FC<IconOnlyButtonProps> = ({
   onClick,
   disabled = false,
-  iconType = "Next",
+  iconType = "Menu",
+  color,
 }) => {
   const handleClick = () => {
     if (onClick && !disabled) {
@@ -44,7 +46,7 @@ const IconOnlyButton: React.FC<IconOnlyButtonProps> = ({
   const IconComponent = iconMapping[iconType];
 
   return (
-    <StyledButton onClick={handleClick} disabled={disabled}>
+    <StyledButton onClick={handleClick} disabled={disabled} color={color}>
       <IconComponent />
     </StyledButton>
   );

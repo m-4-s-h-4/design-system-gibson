@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import {
-  TokensCardDefaultBg,
-  TokensCardDefaultHoverBg,
-  TokensCardDefaultBorder,
+  TokensCardProductDefaultBg,
+  TokensCardProductDefaultHoverBg,
+  TokensCardProductDefaultBorder,
   SpacingSpacing3,
   SpacingSpacing1,
 } from "../../../tokens/js/variables";
 import Box from "../../Primatives/Box/Box";
 
 export const LogoBox = styled(Box)`
-  background-color: ${TokensCardDefaultHoverBg};
+  background-color: ${TokensCardProductDefaultHoverBg};
   width: 120px;
   height: 40px;
   display: flex;
@@ -18,18 +18,18 @@ export const LogoBox = styled(Box)`
 `;
 
 export const CardWrapper = styled(Box)`
-  background-color: ${TokensCardDefaultBg};
+  background-color: ${TokensCardProductDefaultBg};
   padding: ${SpacingSpacing3};
   display: inline-block;
   width: 260px;
   box-sizing: border-box;
 
   &:hover {
-    background-color: ${TokensCardDefaultHoverBg};
+    background-color: ${TokensCardProductDefaultHoverBg};
   }
 
   &:hover ${LogoBox} {
-    background-color: ${TokensCardDefaultBg};
+    background-color: ${TokensCardProductDefaultBg};
   }
 `;
 
@@ -38,7 +38,7 @@ export const ImageContainer = styled(Box)`
   overflow: hidden;
   width: 100%;
   height: 480px;
-  border: 1px solid ${TokensCardDefaultBorder};
+  border: 1px solid ${TokensCardProductDefaultBorder};
 `;
 
 export const BadgeContainer = styled(Box)`

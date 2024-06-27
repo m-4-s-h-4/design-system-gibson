@@ -1,133 +1,89 @@
 import React from "react";
-import { SpacingSpacing3, SpacingSpacing1 } from "../../../tokens/js/variables";
-import Stack from "../../LayoutComponents/Stack/Stack";
-import Flex from "../../LayoutComponents/Flex/Flex";
-import iconMapping from "../../../assets/icons/iconMapping";
-import logosMapping from "../../../assets/logos/logosMapping";
-import IconOnlyButton from "../../FormComponents/Button/IconOnlyButton/IconOnlyButton";
-import Badge, { BadgeProps } from "../../TextContentComponents/Badge/Badge";
-import Heading from "../../TypographyComponents/Heading/Heading";
+import styled from "styled-components";
+
 import {
-  LogoBox,
-  CardWrapper,
-  ImageContainer,
-  BadgeContainer,
-  Image,
-} from "./CardStyles";
+  TokensBaseCardBgColor,
+  TokensBaseCardBorderColor,
+  TokensBaseCardDefaultText,
+  SpacingSpacing6,
+  SpacingSpacing2,
+} from "../../../tokens/js/variables";
 import Box from "../../Primatives/Box/Box";
+import Stack from "../../LayoutComponents/Stack/Stack";
+import Heading from "../../TypographyComponents/Heading/Heading";
+import Text from "../../Primatives/Text/Text";
+import Button from "../../FormComponents/Button/Button";
+
+const CardBox = styled(Box)`
+  border: 1px solid ${TokensBaseCardBorderColor};
+  padding: ${SpacingSpacing6};
+  background-color: ${TokensBaseCardBgColor};
+  width: 320px;
+`;
+
+const StyledButton = styled(Button)`
+  width: auto;
+  align-self: flex-start;
+`;
 
 /**
  * Props for the Card component.
  */
 export interface CardProps {
   /**
-   * The source URL of the image to display in the card.
+   * The variant of the card.
+   * Can be 'headingOnly', 'full', 'headingWithButton', or 'primaryWithButton'.
    */
-  imageSrc: string;
+  variant: "headingOnly" | "full" | "headingWithButton" | "primaryWithButton";
 
   /**
-   * The type of the first icon to display.
-   * Can be any key from the iconMapping object.
+   * The heading text of the card.
    */
-  icon1?: keyof typeof iconMapping;
+  heading: string;
 
   /**
-   * The type of the second icon to display.
-   * Can be any key from the iconMapping object.
+   * The main text content of the card (optional for 'headingOnly' variant).
    */
-  icon2?: keyof typeof iconMapping;
+  text?: string;
 
   /**
-   * Determines whether to show icons.
-   * @default false
+   * The button text of the card (optional for variants with buttons).
    */
-  showIcons?: boolean;
-
-  /**
-   * The logo to display on the card.
-   * Can be any key from the logosMapping object.
-   */
-  logo?: keyof typeof logosMapping;
-
-  /**
-   * The badges to display on the card.
-   * Each badge should include a variant and a showIcon property.
-   */
-  badges?: (BadgeProps & { showIcon: boolean })[];
-
-  /**
-   * The number of badges to display.
-   * @default 0
-   */
-  numberOfBadges?: number;
-
-  /**
-   * The price text to display on the card.
-   */
-  price?: string;
-
-  /**
-   * The about text to display on the card.
-   */
-  aboutText?: string;
+  buttonText?: string;
 }
 
 const Card: React.FC<CardProps> = ({
-  imageSrc,
-  icon1,
-  icon2,
-  showIcons = true,
-  logo = "Furch",
-  badges = [],
-  numberOfBadges = 4,
-  price = "Gibson Custom Les Paul",
-  aboutText = "$9,999",
+  variant,
+  heading,
+  text,
+  buttonText = "Explore",
 }) => {
-  const LogoComponent = logosMapping[logo];
+  const textColor = TokensBaseCardDefaultText;
 
   return (
-    <CardWrapper>
-      <Stack spacing={SpacingSpacing3}>
-        <ImageContainer>
-          <BadgeContainer>
-            {badges.slice(0, numberOfBadges).map((badge, index) => (
-              <Badge
-                key={index}
-                variant={badge.variant}
-                showIcon={badge.showIcon}
-              >
-                {badge.children}
-              </Badge>
-            ))}
-          </BadgeContainer>
-          <Image src={imageSrc} alt="Guitar image" />
-        </ImageContainer>
-        <Box fullWidth>
-          <Flex xAlign="space-between" yAlign="center">
-            <LogoBox>
-              <LogoComponent />
-            </LogoBox>
-            {showIcons && (
-              <Flex
-                direction="row"
-                xAlign="flex-end"
-                yAlign="center"
-                gap={SpacingSpacing1}
-              >
-                {icon1 && <IconOnlyButton iconType={icon1} />}
-                {icon2 && <IconOnlyButton iconType={icon2} />}
-              </Flex>
-            )}
-          </Flex>
-        </Box>
-        <Box fullWidth>
-          <Stack spacing={SpacingSpacing1}>
-            <Heading level="h5">{aboutText}</Heading>
-            <Heading level="h4">{price}</Heading>
+    <CardBox>
+      <Stack orientation="vertical" spacing={SpacingSpacing2}>
+        {(variant === "headingOnly" ||
+          variant === "headingWithButton" ||
+          variant === "full" ||
+          variant === "primaryWithButton") && (
+          <Heading level="h5" style={{ color: textColor }}>
+            {heading}
+          </Heading>
+        )}
+        {(variant === "full" || variant === "primaryWithButton") && (
+          <Text as="bodyMedium" style={{ color: textColor }}>
+            {text}
+          </Text>
+        )}
+        {(variant === "headingWithButton" ||
+          variant === "primaryWithButton") && (
+          <Stack orientation="vertical" spacing={SpacingSpacing6}>
+            <StyledButton variant="secondary">{buttonText}</StyledButton>
           </Stack>
-        </Box>
+        )}
       </Stack>
-    </CardWrapper>
+    </CardBox>
   );
 };
 

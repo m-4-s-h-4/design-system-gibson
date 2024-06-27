@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 26 Jun 2024 18:04:11 GMT
+ * Generated on Thu, 27 Jun 2024 11:11:29 GMT
  */
 
 
@@ -52,6 +52,11 @@
   --tokens-callout-special-text: var(--tokens-color-primary-blue-blue-700);
   --tokens-callout-bg-color: var(--tokens-color-grayscale-white);
   --tokens-callout-border-color: var(--tokens-color-grayscale-black-400);
+  --tokens-base-card-default-text: var(--tokens-color-grayscale-black-900);
+  --tokens-base-card-bg-color: var(--tokens-color-grayscale-white);
+  --tokens-base-card-border-color: var(--tokens-color-grayscale-black-400);
+  --tokens-header-default-text: var(--tokens-color-grayscale-white);
+  --tokens-header-bg-color: var(--tokens-color-primary-brown-brown-500);
   --tokens-label-required: var(--tokens-color-secondary-red-red);
   --tokens-input-background-default: var(--tokens-color-grayscale-black-100);
   --tokens-input-placeholder-default: var(--tokens-color-grayscale-black-500);
@@ -88,10 +93,10 @@
   --tokens-badge-hoover-text-error: var(--tokens-color-secondary-red-red);
   --tokens-badge-hoover-text-success: var(--tokens-color-secondary-green-green);
   --tokens-badge-hoover-text-warning: var(--tokens-color-secondary-yellow-yellow);
-  --tokens-card-default-bg: var(--tokens-color-grayscale-white);
-  --tokens-card-default-hover-bg: var(--tokens-color-grayscale-black-100);
-  --tokens-card-default-border: var(--tokens-color-grayscale-black-300);
-  --tokens-card-default-text: var(--tokens-color-grayscale-black-900);
+  --tokens-card-product-default-bg: var(--tokens-color-grayscale-white);
+  --tokens-card-product-default-hover-bg: var(--tokens-color-grayscale-black-100);
+  --tokens-card-product-default-border: var(--tokens-color-grayscale-black-300);
+  --tokens-card-product-default-text: var(--tokens-color-grayscale-black-900);
   --spacing-spacing-1: 0.25rem;
   --spacing-spacing-2: 0.5rem;
   --spacing-spacing-3: 0.75rem;
