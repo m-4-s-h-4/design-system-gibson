@@ -30,7 +30,7 @@ const Joblistings: React.FC = () => {
     setShowOverlay(false);
   };
 
-  const cards = Array.from({ length: 10 }, (_, index) => (
+  const cards = Array.from({ length: 8 }, (_, index) => (
     <Card
       key={index}
       buttonText="Apply"
@@ -66,10 +66,10 @@ const Joblistings: React.FC = () => {
               type="text"
               fullWidth={true}
             />
-            <Flex direction="row" gap={SpacingSpacing9}>
+            <Stack orientation="horizontal" spacing={SpacingSpacing9}>
               <Stack spacing={SpacingSpacing6}>{firstHalf}</Stack>
               <Stack spacing={SpacingSpacing6}>{secondHalf}</Stack>
-            </Flex>
+            </Stack>
           </Stack>
         </Flex>
       </Content>
