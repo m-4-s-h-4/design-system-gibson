@@ -56,7 +56,7 @@ const Joblistings: React.FC = () => {
             secondText="Through a portfolio of brands that includes Fender®, Squier®, Gretsch® guitars, Jackson®, EVH® and Charvel®, our mission is to inspire every player at every stage, and we look for the same sense of passion and purpose in our employees."
             text="For timeless sound and style, nothing beats a Gibson. Since 1946, Gibson Musical Instruments Corporation (GMIC) has been tireless in its commitment to making the highest quality instruments, amps, pro-audio, accessories and digital products – and life sounds better because of it."
           />
-          <Stack spacing="16px">
+          <Stack spacing={SpacingSpacing6}>
             <Input
               errorMessage=""
               helpTextChildren=""

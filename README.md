@@ -1,30 +1,84 @@
-# React + TypeScript + Vite
+# Rhytmo Design System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Rhytmo Design System is the creative backbone of the Gibson guitar brand's digital experience. It is designed to maintain consistency, scalability, and accessibility across all user interactions, ensuring a harmonious blend of form and function that reflects Gibson's legacy and innovation.
 
-Currently, two official plugins are available:
+## 🎨 Styling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The design system uses styled-components for styling. This allows for modular and reusable component styles.
 
-## Expanding the ESLint configuration
+## 🌟 Design Tokens
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Our design tokens are managed using Style Dictionary. To build the tokens, run:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+npm run build:tokens
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This will generate the necessary design tokens and TypeScript declarations based on the configuration.
+
+All base colors are already defined. Use Figma or adjust JSON to add component specific tokens.
+
+## 📦 Project Setup
+
+### Prerequisites
+
+Before you start, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/en/download/) (v14 or higher)
+- [npm](https://www.npmjs.com/get-npm) (v6 or higher)
+
+### Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/your-repo/gibson-design-system.git
+cd gibson-design-system
+npm install
+```
+
+## 🚀 Available Scripts
+
+In the project directory, you can run the following scripts:
+
+```
+npm run dev
+```
+
+Runs the development server using Vite. Open http://localhost:3000 to view it in your browser.
+
+```
+npm run build
+```
+
+Compiles TypeScript and bundles the project using Vite for production.
+
+```
+npm run build:tokens
+```
+
+Builds the design tokens using Style Dictionary and generates TypeScript declarations.
+Previews the production build locally.
+
+```
+npm run storybook
+```
+
+Starts Storybook for developing and testing UI components. Open http://localhost:6006 to view it in your browser.
+
+npm run build-storybook
+Builds the Storybook static site for deployment.
+
+## 📚 Storybook
+
+We use Storybook for developing and testing our UI components in isolation. To start Storybook, run:
+
+```
+npm run storybook
+```
+
+To build a static version of Storybook for deployment, run:
+
+```
+npm run build-storybook
+```

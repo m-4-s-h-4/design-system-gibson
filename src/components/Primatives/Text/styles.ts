@@ -133,7 +133,6 @@ const styles: Record<string, React.CSSProperties> = {
       H5HeadingMainTextCase as React.CSSProperties["textTransform"],
   },
   bodyLarge: {
-    margin: 0,
     fontFamily: BodyLargeFontFamily,
     fontWeight: FontWeightsFontWeightRegular,
     lineHeight: BodyLargeLineHeight,
@@ -143,7 +142,6 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: BodyLargeTextCase as React.CSSProperties["textTransform"],
   },
   bodyMedium: {
-    margin: 0,
     fontFamily: BodyMediumFontFamily,
     fontWeight: FontWeightsFontWeightRegular,
     lineHeight: BodyMediumLineHeight,
@@ -153,7 +151,6 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: BodyMediumTextCase as React.CSSProperties["textTransform"],
   },
   bodySmall: {
-    margin: 0,
     fontFamily: BodySmallFontFamily,
     fontWeight: FontWeightsFontWeightRegular,
     lineHeight: BodySmallLineHeight,
